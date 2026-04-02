@@ -1,0 +1,63 @@
+﻿:root {
+    --brand-dark: #18202a;
+    --brand-accent: #f3b43f;
+    --brand-surface: #f5f7fb;
+}
+
+body {
+    background: var(--brand-surface);
+    color: #1c2430;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #1d2a44, #3d6ea8);
+}
+
+.card,
+.btn,
+.alert,
+.form-control,
+.form-select,
+textarea,
+input,
+select {
+    border-radius: 1rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.75rem 0.9rem;
+    border: 1px solid #d7deea;
+    background: #fff;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.35rem;
+    font-weight: 600;
+}
+
+.profile-placeholder {
+    width: 120px;
+    height: 120px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1d2a44, #f3b43f);
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.profile-preview {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+}
+
+.content-body p:last-child {
+    margin-bottom: 0;
+}

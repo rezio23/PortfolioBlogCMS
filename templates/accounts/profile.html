@@ -1,0 +1,32 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}Profile | {{ site_name }}{% endblock %}
+
+{% block content %}
+<div class="row g-4 align-items-start">
+    <div class="col-md-4">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+                {% if profile.profile_image %}
+                    <img src="{{ profile.profile_image.url }}" alt="Profile image" class="img-fluid rounded-circle mb-3 profile-preview">
+                {% else %}
+                    <div class="profile-placeholder mb-3">{{ request.user.username|first|upper }}</div>
+                {% endif %}
+                <h1 class="h4 mb-1">{{ request.user.get_full_name|default:request.user.username }}</h1>
+                <p class="text-muted mb-0">{{ profile.location|default:'Location not set' }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card shadow-sm border-0">
+            <div class="card-body">
+                <h2 class="h5">Bio</h2>
+                <p>{{ profile.bio|default:'No bio added yet.' }}</p>
+                <h2 class="h5 mt-4">Website</h2>
+                <p class="mb-0">{{ profile.website|default:'No website added yet.' }}</p>
+                <a class="btn btn-dark mt-4" href="{% url 'accounts:profile_edit' %}">Edit Profile</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

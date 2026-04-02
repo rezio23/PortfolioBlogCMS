@@ -1,0 +1,7 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}{{ project.title }} | {{ site_name }}{% endblock %}
+
+{% block content %}
+<article class="card border-0 shadow-sm"><div class="card-body p-4 p-lg-5"><h1 class="mb-3">{{ project.title }}</h1><p class="lead">{{ project.short_description }}</p><div>{{ project.description|linebreaks }}</div><h2 class="h5 mt-4">Tech Stack</h2><p>{{ project.tech_stack }}</p><div class="d-flex gap-2 flex-wrap mt-4">{% if project.project_url %}<a class="btn btn-dark" href="{{ project.project_url }}" target="_blank" rel="noopener">Live Project</a>{% endif %}{% if project.github_url %}<a class="btn btn-outline-dark" href="{{ project.github_url }}" target="_blank" rel="noopener">GitHub</a>{% endif %}{% if user.is_staff %}<a class="btn btn-outline-secondary" href="{% url 'portfolio:project_update' project.slug %}">Edit</a>{% endif %}</div></div></article>
+{% endblock %}

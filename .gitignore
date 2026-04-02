@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.py,cover
+*.sqlite3
+*.egg-info/
+build/
+dist/
+pip-wheel-metadata/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Django
+staticfiles/
+media/*
+!media/.gitkeep
+!media/profile_images/.gitkeep
+!media/blog_images/.gitkeep
+!media/project_images/.gitkeep
+!media/uploads/.gitkeep
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+coverage.xml
+htmlcov/
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db

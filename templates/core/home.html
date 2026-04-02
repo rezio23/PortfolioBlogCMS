@@ -1,0 +1,41 @@
+﻿{% extends 'base.html' %}
+
+{% block title %}Home | {{ site_name }}{% endblock %}
+
+{% block content %}
+<section class="hero-section p-5 rounded-4 text-white mb-5">
+    <p class="text-uppercase small mb-2">Portfolio + Blog CMS</p>
+    <h1 class="display-5 fw-bold">Create your personal brand hub with Django.</h1>
+    <p class="lead">{{ site_tagline }}</p>
+    <div class="d-flex gap-3 flex-wrap mt-4">
+        <a class="btn btn-warning" href="{% url 'portfolio:project_list' %}">View Projects</a>
+        <a class="btn btn-outline-light" href="{% url 'blog:blog_list' %}">Read the Blog</a>
+    </div>
+</section>
+<section class="row g-4">
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+                <h3 class="h5">Share Your Work</h3>
+                <p class="mb-0">Publish portfolio projects with images, descriptions, and links.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+                <h3 class="h5">Write Content</h3>
+                <p class="mb-0">Organize posts by category and tags with a clean content flow.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+                <h3 class="h5">Manage Everything</h3>
+                <p class="mb-0">Use the account dashboard and Django admin to keep content updated.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
