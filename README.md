@@ -1,4 +1,4 @@
-﻿# Portfolio Blog CMS
+# Portfolio Blog CMS
 
 A Django starter project for a personal portfolio and blog CMS backed by MySQL.
 
