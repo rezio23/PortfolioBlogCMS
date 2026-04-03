@@ -1,11 +1,11 @@
-# Portfolio Blog CMS
+# Blog CMS
 
-A Django starter project for a personal portfolio and blog CMS backed by MySQL.
+A Django starter project for a blog CMS backed by MySQL.
 
 ## Features
 
 - Split settings for base, development, and production
-- Blog, portfolio, contact, core, and accounts apps
+- Blog, contact, core, and accounts apps
 - Template, static, media, and docs folders already organized
 - MySQL-ready environment configuration
 

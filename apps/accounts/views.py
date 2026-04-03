@@ -1,9 +1,8 @@
-﻿from django.contrib import messages
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
 
 from apps.blog.models import Post
-from apps.portfolio.models import Project
 
 from .forms import ProfileForm, UserRegistrationForm, UserUpdateForm
 
@@ -51,6 +50,5 @@ def profile_edit_view(request):
 def dashboard_view(request):
     context = {
         "post_count": Post.objects.filter(author=request.user).count(),
-        "project_count": Project.objects.count(),
     }
     return render(request, "accounts/dashboard.html", context)

@@ -1,4 +1,4 @@
-﻿from django.conf import settings
+from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
@@ -14,7 +14,6 @@ urlpatterns = [
     path("accounts/", include("apps.accounts.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("blog/", include("apps.blog.urls")),
-    path("portfolio/", include("apps.portfolio.urls")),
     path("contact/", include("apps.contact.urls")),
 ]
 

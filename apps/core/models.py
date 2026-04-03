@@ -1,8 +1,8 @@
-﻿from django.db import models
+from django.db import models
 
 
 class SiteConfiguration(models.Model):
-    site_name = models.CharField(max_length=100, default="Portfolio Blog CMS")
+    site_name = models.CharField(max_length=100, default="Blog CMS")
     tagline = models.CharField(max_length=255, blank=True)
     about_text = models.TextField(blank=True)
     updated_at = models.DateTimeField(auto_now=True)

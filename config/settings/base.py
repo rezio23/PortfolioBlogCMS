@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     "apps.core",
     "apps.accounts",
     "apps.blog",
-    "apps.portfolio",
     "apps.contact",
 ]
 

@@ -1,37 +1,140 @@
-﻿{% extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% block title %}Home | {{ site_name }}{% endblock %}
+{% block body_class %}home-page{% endblock %}
+{% block main_class %}pt-4 pb-5{% endblock %}
 
 {% block content %}
-<section class="hero-section p-5 rounded-4 text-white mb-5">
-    <p class="text-uppercase small mb-2">Portfolio + Blog CMS</p>
-    <h1 class="display-5 fw-bold">Create your personal brand hub with Django.</h1>
-    <p class="lead">{{ site_tagline }}</p>
-    <div class="d-flex gap-3 flex-wrap mt-4">
-        <a class="btn btn-warning" href="{% url 'portfolio:project_list' %}">View Projects</a>
-        <a class="btn btn-outline-light" href="{% url 'blog:blog_list' %}">Read the Blog</a>
+<section class="hero-showcase mb-5">
+    <div class="row align-items-center g-5 hero-showcase__content">
+        <div class="col-lg-6">
+            <div class="hero-copy">
+                <span class="hero-copy__eyebrow">Blog CMS</span>
+                <h1 class="hero-copy__title">Build your story, publish your ideas, and manage them from one standout hub.</h1>
+                <p class="hero-copy__text">{{ site_tagline }}</p>
+                <div class="hero-copy__actions">
+                    <a class="btn hero-btn hero-btn--dark" href="{% url 'blog:blog_list' %}">Read the Blog</a>
+                    <a class="btn hero-btn hero-btn--light" href="{% url 'contact:contact' %}">Contact</a>
+                </div>
+                <div class="hero-copy__stats">
+                    <div class="hero-stat">
+                        <strong>Publish with confidence</strong>
+                        <span>Share posts, updates, and editorial content with a polished flow.</span>
+                    </div>
+                    <div class="hero-stat">
+                        <strong>Manage with structure</strong>
+                        <span>Keep categories, tags, and site content organized without sacrificing style.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="hero-device-wrap">
+                <div class="hero-floating-card hero-floating-card--top">
+                    <span class="hero-floating-card__label">Latest update</span>
+                    <strong class="hero-floating-card__title">Fresh post layout</strong>
+                    <p class="hero-floating-card__text mb-0">Refined templates, cleaner content flow, and stronger visual hierarchy.</p>
+                </div>
+                <div class="hero-phone">
+                    <div class="hero-phone__notch"></div>
+                    <div class="hero-phone__screen">
+                        <div class="hero-phone__header">
+                            <span class="hero-phone__avatar"></span>
+                            <div>
+                                <span class="hero-phone__hello">Good evening</span>
+                                <span class="hero-phone__name">{{ site_name }}</span>
+                            </div>
+                            <span class="hero-phone__icon">
+                                <i class="fa-regular fa-bell"></i>
+                            </span>
+                        </div>
+                        <div class="hero-phone__grid">
+                            <article class="hero-phone__card hero-phone__card--lilac">
+                                <span>Posts</span>
+                                <strong>24 published</strong>
+                                <small>Fresh stories ready to read</small>
+                            </article>
+                            <article class="hero-phone__card hero-phone__card--peach">
+                                <span>Drafts</span>
+                                <strong>6 in review</strong>
+                                <small>Categories and tags in sync</small>
+                            </article>
+                        </div>
+                        <div class="hero-phone__section">
+                            <span class="hero-phone__section-title">Content mix</span>
+                            <span class="hero-phone__section-link">See all</span>
+                        </div>
+                        <div class="hero-phone__chips">
+                            <span class="hero-phone__chip">Blog</span>
+                            <span class="hero-phone__chip">About</span>
+                            <span class="hero-phone__chip">Contact</span>
+                        </div>
+                        <div class="hero-phone__section">
+                            <span class="hero-phone__section-title">Recent activity</span>
+                            <span class="hero-phone__section-link">Manage</span>
+                        </div>
+                        <div class="hero-phone__list">
+                            <div class="hero-phone__list-item">
+                                <span class="hero-phone__list-icon hero-phone__list-icon--pink">
+                                    <i class="fa-solid fa-layer-group"></i>
+                                </span>
+                                <div class="hero-phone__list-copy">
+                                    <strong>Homepage refresh</strong>
+                                    <small>Hero layout updated for a bolder first impression</small>
+                                </div>
+                                <span class="hero-phone__list-metric">+18%</span>
+                            </div>
+                            <div class="hero-phone__list-item">
+                                <span class="hero-phone__list-icon hero-phone__list-icon--orange">
+                                    <i class="fa-solid fa-pen"></i>
+                                </span>
+                                <div class="hero-phone__list-copy">
+                                    <strong>New blog draft</strong>
+                                    <small>Editorial templates tuned for easier publishing</small>
+                                </div>
+                                <span class="hero-phone__list-metric">Ready</span>
+                            </div>
+                        </div>
+                        <div class="hero-phone__footer">
+                            <span><i class="fa-solid fa-house"></i> Home</span>
+                            <span><i class="fa-regular fa-rectangle-list"></i> Posts</span>
+                            <span><i class="fa-regular fa-envelope"></i> Contact</span>
+                            <span><i class="fa-regular fa-user"></i> Profile</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-floating-card hero-floating-card--bottom">
+                    <span class="hero-floating-card__label">Why it works</span>
+                    <strong class="hero-floating-card__title">Designed to feel premium</strong>
+                    <p class="hero-floating-card__text mb-0">A cleaner nav, softer gradients, and product-style previews make the homepage feel much more intentional.</p>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <section class="row g-4">
     <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm">
+        <div class="feature-card h-100">
             <div class="card-body">
-                <h3 class="h5">Share Your Work</h3>
-                <p class="mb-0">Publish portfolio projects with images, descriptions, and links.</p>
+                <span class="feature-card__icon"><i class="fa-solid fa-images"></i></span>
+                <h3 class="h5">Share Your Voice</h3>
+                <p class="mb-0">Publish posts, updates, and editorial content with a polished presentation.</p>
             </div>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm">
+        <div class="feature-card h-100">
             <div class="card-body">
+                <span class="feature-card__icon"><i class="fa-solid fa-pen-ruler"></i></span>
                 <h3 class="h5">Write Content</h3>
                 <p class="mb-0">Organize posts by category and tags with a clean content flow.</p>
             </div>
         </div>
     </div>
     <div class="col-md-4">
-        <div class="card h-100 border-0 shadow-sm">
+        <div class="feature-card h-100">
             <div class="card-body">
+                <span class="feature-card__icon"><i class="fa-solid fa-chart-line"></i></span>
                 <h3 class="h5">Manage Everything</h3>
                 <p class="mb-0">Use the account dashboard and Django admin to keep content updated.</p>
             </div>
