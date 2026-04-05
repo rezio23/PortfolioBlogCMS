@@ -7,10 +7,22 @@
     --brand-white-glass: rgba(255, 255, 255, 0.76);
 }
 
+html,
+body {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     background: radial-gradient(circle at top, #ffffff 0%, #f6f9ff 34%, #f4f2fb 100%);
     color: #1c2430;
     font-family: "Plus Jakarta Sans", sans-serif;
+    overflow-x: hidden;
 }
 
 h1,
