@@ -1,6 +1,26 @@
 @media (max-width: 991.98px) {
-    body.home-page .site-navbar {
-        margin-bottom: -4.25rem;
+    .site-main {
+        padding-top: 0.55rem !important;
+    }
+
+    .site-main.pt-4 {
+        padding-top: 1.35rem !important;
+    }
+
+    .site-navbar {
+        margin-top: 1rem;
+        padding: 0.65rem 0 0.3rem;
+    }
+
+    body.home-page .site-navbar,
+    body.about-page .site-navbar,
+    body.skills-page .site-navbar,
+    body.portfolio-page .site-navbar {
+        margin-bottom: 0;
+    }
+
+    .hero-showcase {
+        margin-top: -1.25rem;
     }
 
     .site-navbar__inner {
@@ -22,11 +42,12 @@
     }
 
     .hero-showcase__content {
-        padding-top: 4.7rem;
+        padding-top: 4.2rem;
     }
 
+
     .hero-copy__title {
-        max-width: 12ch;
+        max-width: 11ch;
     }
 
     .hero-device-wrap {
@@ -45,17 +66,41 @@
 }
 
 @media (max-width: 767.98px) {
-    body.home-page .site-navbar {
-        margin-bottom: -3rem;
+    .site-main {
+        padding-top: 0.25rem !important;
+    }
+
+    .site-main.pt-4 {
+        padding-top: 0.95rem !important;
     }
 
     .site-navbar {
-        padding: 0.85rem 0 0.6rem;
+        margin-top: 0.7rem;
+        padding: 0.35rem 0 0.05rem;
+    }
+
+    body.home-page .site-navbar,
+    body.about-page .site-navbar,
+    body.skills-page .site-navbar,
+    body.portfolio-page .site-navbar {
+        margin-bottom: 0;
     }
 
     .site-navbar__inner {
-        border-radius: 1.6rem;
-        padding: 0.8rem 0.9rem;
+        width: 100%;
+        gap: 0.65rem;
+        border-radius: 1.45rem;
+        padding: 0.7rem 0.85rem;
+    }
+
+    .site-navbar__brand {
+        gap: 0.7rem;
+    }
+
+    .site-navbar__brand-mark,
+    .site-navbar__toggler-icon {
+        width: 2.5rem;
+        height: 2.5rem;
     }
 
     .site-navbar__brand-name {
@@ -63,22 +108,25 @@
     }
 
     .hero-showcase {
+        margin-top: -1.2rem;
         min-height: auto;
-        padding: 1rem;
-        border-radius: 1.75rem;
+        padding: 0.95rem;
+        border-radius: 1.65rem;
     }
 
     .hero-showcase__content {
         min-height: auto;
-        padding: 3rem 0.35rem 0.4rem;
+        padding: 2.4rem 0.25rem 0.35rem;
     }
 
     .hero-copy__title {
-        font-size: clamp(2.35rem, 13vw, 3.6rem);
+        max-width: 8.5ch;
+        font-size: clamp(2.1rem, 11.5vw, 3.25rem);
     }
 
     .hero-copy__text {
-        font-size: 1rem;
+        font-size: 0.98rem;
+        line-height: 1.7;
     }
 
     .hero-copy__stats {
@@ -109,3 +157,400 @@
         display: none;
     }
 }
+
+/* About Page Responsive */
+@media (max-width: 991.98px) {
+    .about-hero {
+        margin-top: -1.25rem;
+    }
+
+    .about-hero__title {
+        max-width: 12ch;
+    }
+
+    .about-showcase {
+        margin-top: 0.5rem;
+    }
+
+    .about-cta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .about-hero {
+        margin-top: -1.2rem;
+        padding: 1.25rem;
+        border-radius: 1.75rem;
+    }
+
+    .about-hero__title {
+        max-width: none;
+        font-size: clamp(2.35rem, 12vw, 3.5rem);
+    }
+
+    .about-hero__actions,
+    .about-cta__actions {
+        gap: 0.75rem;
+    }
+
+    .about-hero__actions .hero-btn,
+    .about-cta__actions .hero-btn {
+        width: 100%;
+    }
+
+    .about-mini-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-panel,
+    .about-story-card,
+    .about-principle,
+    .about-journey__step,
+    .about-cta {
+        padding: 1.25rem;
+        border-radius: 1.35rem;
+    }
+
+    .about-note-card {
+        padding: 1rem;
+        border-radius: 1.25rem;
+    }
+
+    .about-section__title {
+        font-size: clamp(1.7rem, 8vw, 2.35rem);
+    }
+}
+/* End About Page Responsive */
+
+/* Login Page Responsive */
+@media (max-width: 991.98px) {
+    .auth-login__title {
+        max-width: 12ch;
+    }
+
+    .auth-login__showcase {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .auth-login__showcase,
+    .auth-login__card {
+        padding: 1.2rem;
+        border-radius: 1.5rem;
+    }
+
+    .auth-login__title {
+        max-width: none;
+        font-size: clamp(2.35rem, 11.5vw, 3.45rem);
+    }
+
+    .auth-login__heading {
+        font-size: clamp(1.8rem, 8vw, 2.35rem);
+    }
+
+    .auth-login__pillars {
+        margin-top: 1.5rem;
+    }
+
+    .auth-social-btn {
+        padding: 0.85rem 0.9rem;
+    }
+
+    .auth-social-btn__status {
+        display: none;
+    }
+
+    .auth-login__links {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+/* End Login Page Responsive */
+
+/* Contact Page Responsive */
+@media (max-width: 991.98px) {
+    .contact-card,
+    .contact-status {
+        padding: 1.35rem;
+        border-radius: 1.7rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .contact-card,
+    .contact-status {
+        padding: 1.15rem;
+        border-radius: 1.45rem;
+    }
+
+    .contact-card__title,
+    .contact-status__title {
+        font-size: clamp(1.9rem, 8vw, 2.3rem);
+    }
+
+    .contact-form__submit {
+        width: 100%;
+    }
+}
+/* End Contact Page Responsive */
+
+/* Portfolio Page Responsive */
+@media (max-width: 991.98px) {
+    body.portfolio-page .site-navbar .navbar-collapse {
+        border-top-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .portfolio-hero {
+        margin-top: -1.25rem;
+        min-height: auto;
+    }
+
+    .portfolio-hero__grid {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 4.1rem 0.55rem 0.45rem;
+    }
+
+    .portfolio-hero__title {
+        max-width: 11ch;
+    }
+
+    .portfolio-hero__media {
+        max-width: none;
+        justify-self: stretch;
+    }
+
+    .portfolio-hero__media-card {
+        min-height: 28rem;
+    }
+
+    .portfolio-roadmap__shell {
+        padding: 1.75rem;
+    }
+
+    .portfolio-roadmap__timeline::before {
+        left: 2.35rem;
+        bottom: 2rem;
+        transform: none;
+    }
+
+    .portfolio-roadmap__heading {
+        margin-bottom: 2rem;
+    }
+
+    .portfolio-roadmap__step {
+        grid-template-columns: 4.75rem minmax(0, 1fr);
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .portfolio-roadmap__step--left .portfolio-roadmap__card,
+    .portfolio-roadmap__step--right .portfolio-roadmap__card {
+        grid-column: 2;
+    }
+
+    .portfolio-roadmap__marker {
+        grid-column: 1;
+        justify-content: flex-start;
+        padding-top: 1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .skills-hero__mini-grid,
+    .skills-list--two-col {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-hero__stat,
+    .skills-card {
+        padding: 1.2rem;
+        border-radius: 1.4rem;
+    }
+
+    .skills-card__header {
+        gap: 0.8rem;
+    }
+
+    .skills-card__intro {
+        gap: 0.4rem;
+    }
+
+    .skills-card__icon {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    .skills-card__eyebrow {
+        padding: 0.35rem 0.62rem;
+        font-size: 0.63rem;
+        letter-spacing: 0.13em;
+    }
+
+    .skills-card__title {
+        font-size: 1.45rem;
+    }
+
+    .skills-list__item {
+        padding: 0.85rem 0.95rem;
+        border-radius: 1rem;
+    }
+
+    .portfolio-hero {
+        margin-top: -1.2rem;
+        padding: 0.95rem;
+        border-radius: 1.65rem;
+    }
+
+    .portfolio-hero__grid {
+        padding: 2.35rem 0.25rem 0.25rem;
+        gap: 1.5rem;
+    }
+
+    .portfolio-hero__location {
+        font-size: 0.92rem;
+    }
+
+    .portfolio-hero__role {
+        margin-top: 1.35rem;
+        font-size: 1.15rem;
+    }
+
+    .portfolio-hero__title {
+        max-width: none;
+        font-size: clamp(2.45rem, 12vw, 3.35rem);
+    }
+
+    .portfolio-hero__text {
+        font-size: 0.98rem;
+        line-height: 1.72;
+    }
+
+    .portfolio-hero__stack {
+        gap: 0.7rem 1rem;
+    }
+
+    .portfolio-hero__stack-label {
+        width: 100%;
+    }
+
+    .portfolio-hero__actions {
+        gap: 0.75rem;
+    }
+
+    .portfolio-hero__btn {
+        width: 100%;
+    }
+
+    .portfolio-hero__media-card {
+        min-height: 21rem;
+        padding: 0.75rem;
+        border-radius: 1.45rem;
+    }
+
+    .portfolio-hero__portrait {
+        inset: 0.75rem;
+        border-radius: 1.2rem;
+    }
+
+    .portfolio-hero__media-badge {
+        top: 1rem;
+        left: 1rem;
+    }
+
+    .portfolio-hero__avatar {
+        bottom: 4.7rem;
+        font-size: 10.5rem;
+    }
+
+    .portfolio-hero__status {
+        left: 1rem;
+        right: 1rem;
+        bottom: 1rem;
+    }
+
+    .portfolio-roadmap__shell {
+        padding: 1.35rem 1rem;
+        border-radius: 1.6rem;
+    }
+
+    .portfolio-roadmap__timeline::before {
+        left: 1.9rem;
+        bottom: 1.5rem;
+        width: 3px;
+        transform: none;
+    }
+
+    .portfolio-roadmap__title {
+        font-size: clamp(1.95rem, 10vw, 2.65rem);
+    }
+
+    .portfolio-roadmap__heading {
+        margin-bottom: 1.5rem;
+    }
+
+    .portfolio-roadmap__step {
+        grid-template-columns: 3.55rem minmax(0, 1fr);
+        gap: 0.8rem;
+    }
+
+    .portfolio-roadmap__marker {
+        padding-top: 0.9rem;
+    }
+
+    .portfolio-roadmap__marker::before {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .portfolio-roadmap__card {
+        padding: 1.15rem;
+        border-radius: 1.25rem;
+    }
+
+    .portfolio-roadmap__icon {
+        width: 2.9rem;
+        height: 2.9rem;
+        font-size: 0.92rem;
+        box-shadow: 0 0 0 6px rgba(247, 250, 255, 0.95), 0 10px 22px rgba(69, 103, 157, 0.14);
+    }
+
+    .portfolio-roadmap__school {
+        font-size: clamp(1.22rem, 5vw, 1.5rem);
+    }
+
+    .portfolio-roadmap__card .portfolio-roadmap__focus {
+        font-size: 0.96rem;
+    }
+
+    .portfolio-roadmap__card .portfolio-roadmap__tag {
+        padding: 0.42rem 0.72rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+    }
+}
+/* End Portfolio Page Responsive */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

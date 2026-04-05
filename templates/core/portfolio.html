@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+
+{% block title %}Portfolio | {{ site_name }}{% endblock %}
+{% block body_class %}portfolio-page{% endblock %}
+{% block main_class %}pt-4 pb-5{% endblock %}
+
+{% block content %}
+<section class="hero-showcase portfolio-showcase mb-5 portfolio-motion-surface" data-reveal data-scroll-float data-float-depth="8">
+    <div class="row align-items-center g-5 hero-showcase__content">
+        <div class="col-lg-7">
+            <div class="hero-copy" data-reveal data-reveal-delay="60">
+                <div class="portfolio-showcase__location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Phnom Penh, Cambodia</span>
+                </div>
+                <h1 class="hero-copy__title portfolio-showcase__title">Building practical backend systems while growing through real study and project work.</h1>
+                <p class="hero-copy__text">I work across ASP.NET, Node.js, Django, React, TypeScript, and database tools while continuing my studies at AUB University and IFL University.</p>
+                <div class="hero-copy__actions" data-reveal data-reveal-delay="130">
+                    <a class="btn hero-btn hero-btn--dark portfolio-hover-button" href="#portfolio-stack">View Skills</a>
+                    <a class="btn hero-btn hero-btn--light portfolio-hover-button" href="{% url 'blog:blog_list' %}">Read My Blog</a>
+                </div>
+                <div class="hero-copy__stats">
+                    <div class="hero-stat portfolio-hover-card" data-reveal data-reveal-delay="240" data-scroll-float data-float-depth="12">
+                        <strong>Technical direction</strong>
+                        <span>Backend development, REST APIs, databases, and modern frontend tools in one growing portfolio.</span>
+                    </div>
+                    <div class="hero-stat portfolio-hover-card" data-reveal data-reveal-delay="300" data-scroll-float data-float-depth="14">
+                        <strong>Education path</strong>
+                        <span>PT School from 2021 to 2024, then ongoing study at AUB University and IFL University since 2024.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="skills-hero__panel portfolio-showcase__panel" data-reveal data-reveal-delay="140">
+                <article class="skills-hero__stat skills-hero__stat--dark portfolio-hover-card" data-scroll-float data-float-depth="12">
+                    <span class="skills-hero__stat-label">Current focus</span>
+                    <strong class="skills-hero__stat-title">Backend, APIs, and structured full-stack products</strong>
+                    <p class="mb-0">Building practical systems with clean logic, clear interfaces, and a strong learning mindset.</p>
+                </article>
+                <div class="skills-hero__mini-grid">
+                    <article class="skills-hero__stat portfolio-hover-card" data-scroll-float data-float-depth="10">
+                        <span class="skills-hero__stat-label">Foundation</span>
+                        <strong class="skills-hero__stat-title">PT School</strong>
+                        <p class="mb-0">High school studies completed from 2021 to 2024.</p>
+                    </article>
+                    <article class="skills-hero__stat portfolio-hover-card" data-scroll-float data-float-depth="14">
+                        <span class="skills-hero__stat-label">Present</span>
+                        <strong class="skills-hero__stat-title">AUB + IFL</strong>
+                        <p class="mb-0">University studies continuing from 2024 until now.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row g-4 skills-grid mb-5" id="portfolio-stack">
+    <div class="col-lg-4" data-reveal data-reveal-delay="40">
+        <article class="skills-card h-100 portfolio-hover-card" data-scroll-float data-float-depth="12">
+            <div class="skills-card__header">
+                <span class="skills-card__icon skills-card__icon--backend"><i class="fa-solid fa-server"></i></span>
+                <div class="skills-card__intro">
+                    <span class="skills-card__eyebrow">Part 01</span>
+                    <h2 class="skills-card__title">Backend</h2>
+                </div>
+            </div>
+            <p class="skills-card__text">Backend tools for application logic, APIs, and scalable service development.</p>
+            <div class="skills-list">
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-solid fa-code"></i></span>
+                    <span>ASP.NET</span>
+                </div>
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-brands fa-node-js"></i></span>
+                    <span>Node.js</span>
+                </div>
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-brands fa-python"></i></span>
+                    <span>Django</span>
+                </div>
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-solid fa-code-branch"></i></span>
+                    <span>REST API</span>
+                </div>
+            </div>
+        </article>
+    </div>
+    <div class="col-lg-4" data-reveal data-reveal-delay="110">
+        <article class="skills-card h-100 portfolio-hover-card" data-scroll-float data-float-depth="15">
+            <div class="skills-card__header">
+                <span class="skills-card__icon skills-card__icon--frontend"><i class="fa-solid fa-laptop-code"></i></span>
+                <div class="skills-card__intro">
+                    <span class="skills-card__eyebrow">Part 02</span>
+                    <h2 class="skills-card__title">Frontend</h2>
+                </div>
+            </div>
+            <p class="skills-card__text">Frontend tools for responsive interfaces, typed apps, and modern web experiences.</p>
+            <div class="skills-list">
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-brands fa-react"></i></span>
+                    <span>React</span>
+                </div>
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-solid fa-file-code"></i></span>
+                    <span>TypeScript</span>
+                </div>
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-solid fa-forward"></i></span>
+                    <span>Next.js</span>
+                </div>
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-solid fa-wind"></i></span>
+                    <span>Tailwind CSS</span>
+                </div>
+            </div>
+        </article>
+    </div>
+    <div class="col-lg-4" data-reveal data-reveal-delay="180">
+        <article class="skills-card h-100 portfolio-hover-card" data-scroll-float data-float-depth="18">
+            <div class="skills-card__header">
+                <span class="skills-card__icon skills-card__icon--other"><i class="fa-solid fa-toolbox"></i></span>
+                <div class="skills-card__intro">
+                    <span class="skills-card__eyebrow">Part 03</span>
+                    <h2 class="skills-card__title">Other</h2>
+                </div>
+            </div>
+            <p class="skills-card__text">Supporting tools across databases, design workflows, mobile learning, and wider software development.</p>
+            <div class="skills-list skills-list--two-col">
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-solid fa-database"></i></span>
+                    <span>SQL Server</span>
+                </div>
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-solid fa-server"></i></span>
+                    <span>MySQL</span>
+                </div>
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-brands fa-figma"></i></span>
+                    <span>Figma</span>
+                </div>
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-solid fa-image"></i></span>
+                    <span>Photoshop</span>
+                </div>
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
+                    <span>Kotlin</span>
+                </div>
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-brands fa-java"></i></span>
+                    <span>Java</span>
+                </div>
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-brands fa-php"></i></span>
+                    <span>PHP</span>
+                </div>
+                <div class="skills-list__item portfolio-hover-list">
+                    <span class="skills-list__icon"><i class="fa-solid fa-robot"></i></span>
+                    <span>AI Tools</span>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="portfolio-roadmap" data-reveal data-reveal-delay="70">
+    <div class="portfolio-roadmap__shell portfolio-motion-surface" data-scroll-float data-float-depth="10">
+        <div class="portfolio-roadmap__heading text-center" data-reveal data-reveal-delay="100">
+            <span class="portfolio-roadmap__eyebrow">Education Journey</span>
+            <h2 class="portfolio-roadmap__title">Education <span>Journey</span></h2>
+            <p class="portfolio-roadmap__text">Starting with my current Software Development Internship at AUB, this reverse timeline then moves through my ongoing university studies and back to the academic foundation built at PT School.</p>
+        </div>
+
+        <div class="portfolio-roadmap__timeline">
+            <article class="portfolio-roadmap__step portfolio-roadmap__step--right" data-reveal data-reveal-delay="120">
+                <div class="portfolio-roadmap__card portfolio-hover-card" data-scroll-float data-float-depth="12">
+                    <span class="portfolio-roadmap__year">9th February 2026 - Present</span>
+                    <h3 class="portfolio-roadmap__school">Software Development Internship at AUB</h3>
+                    <p class="portfolio-roadmap__tag">Professional Experience</p>
+                    <p class="mb-0">Building hands-on experience through real software development work while strengthening backend thinking, collaboration, and practical delivery.</p>
+                </div>
+                <div class="portfolio-roadmap__marker">
+                    <span class="portfolio-roadmap__icon"><i class="fa-solid fa-briefcase"></i></span>
+                </div>
+            </article>
+
+            <article class="portfolio-roadmap__step portfolio-roadmap__step--left" data-reveal data-reveal-delay="190">
+                <div class="portfolio-roadmap__card portfolio-hover-card" data-scroll-float data-float-depth="16">
+                    <span class="portfolio-roadmap__year">2024 - Present</span>
+                    <h3 class="portfolio-roadmap__school">ACLEDA University of Business</h3>
+                    <p class="portfolio-roadmap__focus">Computer Science and Engineering</p>
+                    <p class="portfolio-roadmap__tag">University Study</p>
+                    <p class="mb-0">Continuing my university journey while growing practical experience in software development, projects, and problem-solving.</p>
+                </div>
+                <div class="portfolio-roadmap__marker">
+                    <span class="portfolio-roadmap__icon"><i class="fa-solid fa-building-columns"></i></span>
+                </div>
+            </article>
+
+            <article class="portfolio-roadmap__step portfolio-roadmap__step--right" data-reveal data-reveal-delay="260">
+                <div class="portfolio-roadmap__card portfolio-hover-card" data-scroll-float data-float-depth="20">
+                    <span class="portfolio-roadmap__year">2024 - Present</span>
+                    <h3 class="portfolio-roadmap__school">Institute of Foreign Language of RUPP</h3>
+                    <p class="portfolio-roadmap__focus">Department of English</p>
+                    <p class="portfolio-roadmap__tag">University Study</p>
+                    <p class="mb-0">Expanding my broader learning path with ongoing study that supports communication, consistency, and future development.</p>
+                </div>
+                <div class="portfolio-roadmap__marker">
+                    <span class="portfolio-roadmap__icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                </div>
+            </article>
+
+            <article class="portfolio-roadmap__step portfolio-roadmap__step--left" data-reveal data-reveal-delay="330">
+                <div class="portfolio-roadmap__card portfolio-hover-card" data-scroll-float data-float-depth="24">
+                    <span class="portfolio-roadmap__year">2021 - 2024</span>
+                    <h3 class="portfolio-roadmap__school">Phnom Thom Highschool</h3>
+                    <p class="portfolio-roadmap__tag">High School Journey</p>
+                    <p class="mb-0">Built the academic foundation that prepared me for higher education, stronger discipline, and long-term technical growth.</p>
+                </div>
+                <div class="portfolio-roadmap__marker">
+                    <span class="portfolio-roadmap__icon"><i class="fa-solid fa-school"></i></span>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+
+
+
+
+

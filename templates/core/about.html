@@ -1,13 +1,196 @@
 {% extends 'base.html' %}
 
 {% block title %}About | {{ site_name }}{% endblock %}
+{% block body_class %}about-page{% endblock %}
+{% block main_class %}pt-4 pb-5{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-lg-8">
-        <h1 class="mb-3">About</h1>
-        <p class="lead">{{ site_about|default:'Tell your story, background, and what you are building.' }}</p>
-        <p>This starter includes separate apps for your core pages, blog, contact form, and user accounts so you can grow the site feature by feature.</p>
+<section class="about-hero mb-5">
+    <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+            <span class="about-hero__eyebrow">About {{ site_name }}</span>
+            <h1 class="about-hero__title">A publishing space designed to feel clear, personal, and built to grow.</h1>
+            <p class="about-hero__text">{{ site_about|default:'A modern content platform built with Django to help you share ideas, tell your story, and keep everything organized.' }}</p>
+            <p class="about-hero__subtext">{{ site_tagline }}</p>
+            <div class="about-hero__actions">
+                <a class="btn hero-btn hero-btn--dark" href="{% url 'blog:blog_list' %}">Explore the Blog</a>
+                <a class="btn hero-btn hero-btn--light" href="{% url 'contact:contact' %}">Start a Conversation</a>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="about-showcase">
+                <article class="about-panel about-panel--primary">
+                    <span class="about-panel__label">Built for</span>
+                    <strong class="about-panel__title">Creators who want structure without losing personality.</strong>
+                    <p class="mb-0">This project blends a clean publishing workflow with a polished front end so the site feels intentional at every step.</p>
+                </article>
+                <div class="about-mini-grid">
+                    <article class="about-panel">
+                        <span class="about-panel__label">Focus</span>
+                        <strong class="about-panel__title">Readable content</strong>
+                        <p class="mb-0">Thoughtful spacing, clear hierarchy, and pages that support the writing.</p>
+                    </article>
+                    <article class="about-panel">
+                        <span class="about-panel__label">Foundation</span>
+                        <strong class="about-panel__title">Django + reusable templates</strong>
+                        <p class="mb-0">Simple to maintain, easy to grow, and practical for real content work.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
+<section class="row g-4 mb-5">
+    <div class="col-lg-7">
+        <article class="about-story-card h-100">
+            <span class="about-section__eyebrow">The Story</span>
+            <h2 class="about-section__title">More than a starter template</h2>
+            <p>This site was shaped to feel less like a generic CMS and more like a confident home for writing, updates, and personal work. The goal is to make publishing easier while keeping the interface calm, modern, and memorable.</p>
+            <p class="mb-0">Everything from the hero layout to the content structure is built to support the same idea: help people share what they know, present it well, and keep the system manageable as it grows.</p>
+        </article>
+    </div>
+    <div class="col-lg-5">
+        <div class="about-stack h-100">
+            <article class="about-note-card">
+                <span class="about-note-card__icon"><i class="fa-solid fa-pen-nib"></i></span>
+                <div>
+                    <strong>Content-first thinking</strong>
+                    <p class="mb-0">Layouts are designed to support writing, not compete with it.</p>
+                </div>
+            </article>
+            <article class="about-note-card">
+                <span class="about-note-card__icon"><i class="fa-solid fa-layer-group"></i></span>
+                <div>
+                    <strong>Flexible structure</strong>
+                    <p class="mb-0">Pages, posts, tags, and categories stay organized as the site expands.</p>
+                </div>
+            </article>
+            <article class="about-note-card">
+                <span class="about-note-card__icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                <div>
+                    <strong>Polished presentation</strong>
+                    <p class="mb-0">A softer visual system helps the site feel premium without feeling heavy.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="mb-5">
+    <div class="about-section-heading">
+        <span class="about-section__eyebrow">What Matters Here</span>
+        <h2 class="about-section__title">The experience is built around a few simple priorities.</h2>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="feature-card h-100">
+                <div class="card-body">
+                    <span class="feature-card__icon"><i class="fa-solid fa-book-open"></i></span>
+                    <h3 class="h5">Clear storytelling</h3>
+                    <p class="mb-0">Pages are arranged to guide readers smoothly from headline to detail to action.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card h-100">
+                <div class="card-body">
+                    <span class="feature-card__icon"><i class="fa-solid fa-sliders"></i></span>
+                    <h3 class="h5">Easy management</h3>
+                    <p class="mb-0">Content tools stay practical so publishing and updates feel manageable day to day.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card h-100">
+                <div class="card-body">
+                    <span class="feature-card__icon"><i class="fa-solid fa-seedling"></i></span>
+                    <h3 class="h5">Room to grow</h3>
+                    <p class="mb-0">The structure is ready for new pages, new ideas, and a stronger brand over time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mb-5">
+    <div class="about-section-heading">
+        <span class="about-section__eyebrow">Working Principles</span>
+        <h2 class="about-section__title">A few values shape how the platform is presented.</h2>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-6 col-xl-3">
+            <article class="about-principle h-100">
+                <span class="about-principle__icon"><i class="fa-solid fa-eye"></i></span>
+                <h3>Clarity</h3>
+                <p class="mb-0">Content should be easy to scan, easy to follow, and visually calm.</p>
+            </article>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <article class="about-principle h-100">
+                <span class="about-principle__icon"><i class="fa-solid fa-feather-pointed"></i></span>
+                <h3>Personality</h3>
+                <p class="mb-0">The design leaves space for voice, identity, and a sense of craft.</p>
+            </article>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <article class="about-principle h-100">
+                <span class="about-principle__icon"><i class="fa-solid fa-diagram-project"></i></span>
+                <h3>Structure</h3>
+                <p class="mb-0">A reliable system makes it easier to manage content confidently over time.</p>
+            </article>
+        </div>
+        <div class="col-md-6 col-xl-3">
+            <article class="about-principle h-100">
+                <span class="about-principle__icon"><i class="fa-solid fa-bolt"></i></span>
+                <h3>Momentum</h3>
+                <p class="mb-0">The site is built to make publishing feel lighter so ideas keep moving.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="about-journey mb-5">
+    <div class="about-section-heading">
+        <span class="about-section__eyebrow">Journey</span>
+        <h2 class="about-section__title">From idea to published work, the flow stays simple.</h2>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <article class="about-journey__step h-100">
+                <span class="about-journey__number">01</span>
+                <h3>Shape the message</h3>
+                <p class="mb-0">Draft content, refine the story, and decide what deserves its own page or post.</p>
+            </article>
+        </div>
+        <div class="col-md-4">
+            <article class="about-journey__step h-100">
+                <span class="about-journey__number">02</span>
+                <h3>Organize the system</h3>
+                <p class="mb-0">Keep categories, tags, and navigation aligned so growth stays manageable.</p>
+            </article>
+        </div>
+        <div class="col-md-4">
+            <article class="about-journey__step h-100">
+                <span class="about-journey__number">03</span>
+                <h3>Publish with confidence</h3>
+                <p class="mb-0">Share the final result in a layout that feels polished and ready for readers.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="about-cta">
+    <div>
+        <span class="about-section__eyebrow">Next Step</span>
+        <h2 class="about-section__title mb-2">Want to turn this into your own publishing hub?</h2>
+        <p class="mb-0">Browse the blog, explore the feature set, or reach out when you are ready to customize the experience.</p>
+    </div>
+    <div class="about-cta__actions">
+        <a class="btn hero-btn hero-btn--dark" href="{% url 'blog:blog_list' %}">View Posts</a>
+        <a class="btn hero-btn hero-btn--light" href="{% url 'contact:contact' %}">Contact</a>
+    </div>
+</section>
 {% endblock %}
+
+

@@ -1,4 +1,4 @@
-﻿from django.shortcuts import render
+from django.shortcuts import render
 from django.views.generic import TemplateView
 
 
@@ -10,8 +10,12 @@ class AboutView(TemplateView):
     template_name = "core/about.html"
 
 
-class SkillsView(TemplateView):
-    template_name = "core/skills.html"
+class PortfolioView(TemplateView):
+    template_name = "core/portfolio.html"
+
+
+class SkillsView(PortfolioView):
+    pass
 
 
 class ServicesView(TemplateView):

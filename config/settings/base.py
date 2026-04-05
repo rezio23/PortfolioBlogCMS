@@ -111,11 +111,11 @@ TIME_ZONE = env("DJANGO_TIME_ZONE", "UTC")
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-MEDIA_URL = "media/"
+MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
@@ -126,3 +126,10 @@ LOGIN_URL = "login"
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 DEFAULT_FROM_EMAIL = env("DEFAULT_FROM_EMAIL", "no-reply@example.com")
+
+SOCIAL_LOGIN_URLS = {
+    "google": env("SOCIAL_LOGIN_GOOGLE_URL", ""),
+    "github": env("SOCIAL_LOGIN_GITHUB_URL", ""),
+    "facebook": env("SOCIAL_LOGIN_FACEBOOK_URL", ""),
+}
+

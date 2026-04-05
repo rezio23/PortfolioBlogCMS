@@ -1,11 +1,17 @@
-﻿{% extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% block title %}Message Sent | {{ site_name }}{% endblock %}
+{% block body_class %}contact-page{% endblock %}
+{% block main_class %}pt-4 pb-5{% endblock %}
 
 {% block content %}
-<div class="text-center py-5">
-    <h1 class="mb-3">Message Sent</h1>
-    <p class="lead">Thanks for getting in touch. Your message has been saved successfully.</p>
-    <a class="btn btn-dark" href="{% url 'core:home' %}">Back to Home</a>
-</div>
+<section class="contact-shell">
+    <div class="contact-status text-center portfolio-motion-surface" data-reveal data-scroll-float data-float-depth="8">
+        <span class="contact-card__eyebrow">Message sent</span>
+        <h1 class="contact-status__title">Thanks for reaching out</h1>
+        <p class="contact-status__text">Your message has been saved successfully. I will review it soon.</p>
+        <a class="btn hero-btn hero-btn--dark contact-form__submit" href="{% url 'core:home' %}">Back to Home</a>
+    </div>
+</section>
 {% endblock %}
+
