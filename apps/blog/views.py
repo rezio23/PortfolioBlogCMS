@@ -48,21 +48,29 @@ def blog_detail(request, slug):
 
 def category_posts(request, slug):
     category = get_object_or_404(Category, slug=slug)
-    queryset = category.posts.filter(status=Post.Status.PUBLISHED)
+    queryset = (
+        category.posts.filter(status=Post.Status.PUBLISHED)
+        .select_related("author", "category")
+        .prefetch_related("tags")
+    )
     page_obj = paginate(request, queryset)
     return render(request, "blog/category_posts.html", {"category": category, "page_obj": page_obj, "posts": page_obj.object_list})
 
 
 def tag_posts(request, slug):
     tag = get_object_or_404(Tag, slug=slug)
-    queryset = tag.posts.filter(status=Post.Status.PUBLISHED)
+    queryset = (
+        tag.posts.filter(status=Post.Status.PUBLISHED)
+        .select_related("author", "category")
+        .prefetch_related("tags")
+    )
     page_obj = paginate(request, queryset)
     return render(request, "blog/tag_posts.html", {"tag": tag, "page_obj": page_obj, "posts": page_obj.object_list})
 
 
 def search_results(request):
     query = request.GET.get("q", "").strip()
-    queryset = Post.objects.filter(status=Post.Status.PUBLISHED)
+    queryset = Post.objects.filter(status=Post.Status.PUBLISHED).select_related("author", "category").prefetch_related("tags")
     if query:
         queryset = queryset.filter(
             Q(title__icontains=query) | Q(excerpt__icontains=query) | Q(content__icontains=query)
@@ -121,6 +129,7 @@ def post_delete(request, slug):
 
 @login_required
 def my_posts(request):
-    queryset = Post.objects.filter(author=request.user)
+    queryset = Post.objects.filter(author=request.user).select_related("category").prefetch_related("tags")
     page_obj = paginate(request, queryset)
     return render(request, "blog/my_posts.html", {"page_obj": page_obj, "posts": page_obj.object_list})
+

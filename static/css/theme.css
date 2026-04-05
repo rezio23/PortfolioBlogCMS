@@ -442,6 +442,140 @@ html[data-theme="dark"] .auth-login__divider::after {
     background: rgba(255, 255, 255, 0.12);
 }
 
+html[data-theme="dark"] .services-hero {
+    background: linear-gradient(160deg, #151a2a 0%, #1a2134 52%, #132a31 100%);
+    box-shadow: 0 26px 60px rgba(4, 7, 17, 0.28);
+}
+
+html[data-theme="dark"] .services-hero::before {
+    background:
+        radial-gradient(circle at 14% 18%, rgba(255, 255, 255, 0.08) 0, rgba(255, 255, 255, 0) 18%),
+        radial-gradient(circle at 84% 20%, rgba(24, 239, 206, 0.08) 0, rgba(24, 239, 206, 0) 16%),
+        radial-gradient(circle at 80% 82%, rgba(115, 161, 255, 0.12) 0, rgba(115, 161, 255, 0) 18%);
+}
+
+html[data-theme="dark"] .services-hero__eyebrow,
+html[data-theme="dark"] :is(.services-highlight__label, .services-card__kicker) {
+    background: rgba(115, 161, 255, 0.12);
+    border-color: rgba(139, 156, 204, 0.18);
+    color: #d9e7ff;
+}
+
+html[data-theme="dark"] :is(.services-hero__title, .services-highlight__title, .services-card__title) {
+    color: #eef2ff;
+}
+
+html[data-theme="dark"] :is(.services-hero__text, .services-highlight p, .services-card__text) {
+    color: rgba(184, 196, 231, 0.82);
+}
+
+html[data-theme="dark"] :is(.services-highlight, .services-card) {
+    background: linear-gradient(180deg, rgba(35, 40, 58, 0.96) 0%, rgba(18, 22, 34, 0.98) 100%);
+    border-color: rgba(120, 135, 183, 0.14);
+    box-shadow: 0 24px 54px rgba(4, 7, 17, 0.3);
+}
+
+html[data-theme="dark"] .services-card__icon {
+    border-color: rgba(182, 216, 255, 0.14);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 18px 30px rgba(4, 8, 18, 0.26);
+}
+
+html[data-theme="dark"] .services-card__list li {
+    color: #dce6ff;
+}
+
+html[data-theme="dark"] .blog-hero {
+    background: linear-gradient(160deg, #151a2a 0%, #1a2134 52%, #132a31 100%);
+    box-shadow: 0 26px 60px rgba(4, 7, 17, 0.28);
+}
+
+html[data-theme="dark"] .blog-page-header,
+html[data-theme="dark"] .blog-filter,
+html[data-theme="dark"] .blog-post-card,
+html[data-theme="dark"] .blog-empty,
+html[data-theme="dark"] .blog-hero__panel {
+    background: linear-gradient(180deg, rgba(35, 40, 58, 0.96) 0%, rgba(18, 22, 34, 0.98) 100%);
+    border-color: rgba(120, 135, 183, 0.14);
+    box-shadow: 0 24px 54px rgba(4, 7, 17, 0.3);
+}
+
+html[data-theme="dark"] .blog-hero::before {
+    background:
+        radial-gradient(circle at 16% 18%, rgba(115, 161, 255, 0.08) 0, rgba(115, 161, 255, 0) 16%),
+        radial-gradient(circle at 84% 20%, rgba(24, 239, 206, 0.08) 0, rgba(24, 239, 206, 0) 14%),
+        radial-gradient(circle at 80% 82%, rgba(61, 91, 170, 0.12) 0, rgba(61, 91, 170, 0) 16%);
+}
+
+html[data-theme="dark"] :is(.blog-page-header::before, .blog-filter::before, .blog-empty::before) {
+    background:
+        radial-gradient(circle at 16% 18%, rgba(115, 161, 255, 0.05) 0, rgba(115, 161, 255, 0) 14%),
+        radial-gradient(circle at 84% 20%, rgba(24, 239, 206, 0.04) 0, rgba(24, 239, 206, 0) 12%),
+        radial-gradient(circle at 80% 82%, rgba(61, 91, 170, 0.05) 0, rgba(61, 91, 170, 0) 14%);
+}
+
+html[data-theme="dark"] :is(.blog-hero__eyebrow, .blog-page-header__eyebrow, .blog-page-header__pill, .blog-post-card__category, .blog-post-card__tag, .blog-post-card__status) {
+    background: rgba(115, 161, 255, 0.12);
+    border-color: rgba(139, 156, 204, 0.18);
+    color: #d9e7ff;
+}
+
+html[data-theme="dark"] :is(.blog-hero__title, .blog-page-header__title, .blog-post-card__title, .blog-empty__title) {
+    color: #eef2ff;
+}
+
+html[data-theme="dark"] :is(.blog-hero__text, .blog-page-header__text, .blog-hero__panel p, .blog-post-card__text, .blog-empty__text) {
+    color: rgba(184, 196, 231, 0.82);
+}
+
+html[data-theme="dark"] :is(.blog-hero__panel-value, .blog-filter__form label, .blog-post-card__title a, .blog-post-card__meta > span) {
+    color: #e7edff;
+}
+
+html[data-theme="dark"] .blog-filter__form :is(input, select) {
+    background: #121827;
+    border-color: #33405d;
+    color: #eef2ff;
+}
+
+html[data-theme="dark"] .blog-filter__form :is(input, select)::placeholder {
+    color: rgba(184, 196, 231, 0.5);
+}
+
+html[data-theme="dark"] .blog-post-card__link {
+    color: #8bdcff;
+}
+
+html[data-theme="dark"] .blog-post-card__action {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #eef2ff;
+}
+
+html[data-theme="dark"] .blog-post-card__action:hover,
+html[data-theme="dark"] .blog-post-card__action:focus {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+html[data-theme="dark"] .blog-post-card__action--danger {
+    background: rgba(220, 38, 38, 0.08);
+    border-color: rgba(248, 113, 113, 0.16);
+    color: #fca5a5;
+}
+
+html[data-theme="dark"] .page-item .page-link {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #e7edff;
+    box-shadow: none;
+}
+
+html[data-theme="dark"] .page-item.active .page-link {
+    background: linear-gradient(135deg, #19e6ca 0%, #13bba8 100%);
+    border-color: transparent;
+    color: #09131b;
+}
+
 html[data-theme="dark"] .contact-card,
 html[data-theme="dark"] .contact-status {
     background: linear-gradient(180deg, rgba(35, 40, 58, 0.96) 0%, rgba(18, 22, 34, 0.98) 100%);
@@ -548,3 +682,73 @@ html[data-theme="dark"] .portfolio-hover-list:hover {
 
 
 
+
+
+
+
+
+
+
+/* Blog Page Alignment Dark Theme */
+html[data-theme="dark"] .blog-page-header,
+html[data-theme="dark"] .blog-filter,
+html[data-theme="dark"] .blog-post-card,
+html[data-theme="dark"] .blog-empty {
+    background: linear-gradient(180deg, rgba(35, 40, 58, 0.96) 0%, rgba(18, 22, 34, 0.98) 100%);
+    border-color: rgba(120, 135, 183, 0.14);
+    box-shadow: 0 24px 54px rgba(4, 7, 17, 0.3);
+}
+
+html[data-theme="dark"] :is(.blog-page-header::before, .blog-filter::before, .blog-empty::before) {
+    display: none;
+}
+
+html[data-theme="dark"] .blog-filter__title {
+    color: #eef2ff;
+}
+
+html[data-theme="dark"] .blog-filter__intro p {
+    color: rgba(184, 196, 231, 0.82);
+}
+
+/* Contact Page Social Redesign Dark Theme */
+html[data-theme="dark"] .contact-card__subcopy {
+    color: rgba(184, 196, 231, 0.82);
+}
+
+html[data-theme="dark"] .contact-social {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #eef2ff;
+    box-shadow: 0 16px 30px rgba(4, 7, 17, 0.16);
+}
+
+html[data-theme="dark"] .contact-social:hover,
+html[data-theme="dark"] .contact-social:focus {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(139, 156, 204, 0.18);
+}
+
+html[data-theme="dark"] .contact-social__label strong,
+html[data-theme="dark"] .contact-social__meta {
+    color: #eef2ff;
+}
+
+html[data-theme="dark"] .contact-social__hint {
+    color: rgba(184, 196, 231, 0.76);
+}
+
+html[data-theme="dark"] .contact-social--disabled {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+html[data-theme="dark"] .contact-form__errors {
+    background: rgba(248, 113, 113, 0.08);
+    border-color: rgba(248, 113, 113, 0.16);
+    color: #fecaca;
+}
+
+html[data-theme="dark"] .contact-form__error {
+    color: #fca5a5;
+}

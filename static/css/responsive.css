@@ -270,6 +270,89 @@
 }
 /* End Login Page Responsive */
 
+/* Services Page Responsive */
+@media (max-width: 991.98px) {
+    .services-hero {
+        padding: 1.55rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .services-hero,
+    .services-highlight,
+    .services-card {
+        padding: 1.2rem;
+        border-radius: 1.45rem;
+    }
+
+    .services-hero__title {
+        max-width: none;
+        font-size: clamp(2.3rem, 10.5vw, 3.2rem);
+    }
+
+    .services-card__title {
+        font-size: 1.45rem;
+    }
+}
+/* End Services Page Responsive */
+
+/* Blog Page Responsive */
+@media (max-width: 991.98px) {
+    .blog-hero,
+    .blog-page-header {
+        padding: 1.5rem;
+    }
+
+    .blog-filter,
+    .blog-empty {
+        padding: 1.15rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .blog-hero,
+    .blog-page-header,
+    .blog-filter,
+    .blog-post-card,
+    .blog-empty {
+        border-radius: 1.45rem;
+    }
+
+    .blog-hero,
+    .blog-page-header,
+    .blog-filter,
+    .blog-empty,
+    .blog-post-card__body {
+        padding: 1.2rem;
+    }
+
+    .blog-hero__title,
+    .blog-page-header__title {
+        max-width: none;
+        font-size: clamp(2.2rem, 10vw, 3rem);
+    }
+
+    .blog-page-header__row {
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .blog-page-header__summary,
+    .blog-page-header__actions,
+    .blog-post-card__actions,
+    .blog-filter__actions {
+        flex-direction: column;
+    }
+
+    .blog-post-card__action,
+    .blog-filter__actions .btn,
+    .blog-page-header__row .btn,
+    .blog-hero__actions .btn {
+        width: 100%;
+    }
+}
+/* End Blog Page Responsive */
+
 /* Contact Page Responsive */
 @media (max-width: 991.98px) {
     .contact-card,
@@ -554,3 +637,71 @@
 
 
 
+
+
+
+
+/* Blog Page Alignment Responsive */
+@media (max-width: 991.98px) {
+    body.blog-page .site-navbar {
+        margin-bottom: 0;
+    }
+
+    .blog-page-hero__title {
+        max-width: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    body.blog-page .site-navbar {
+        margin-bottom: 0;
+    }
+
+    .blog-page-hero__title {
+        font-size: clamp(2.35rem, 11vw, 3.2rem);
+    }
+
+    .blog-filter__title {
+        font-size: clamp(1.55rem, 8vw, 1.95rem);
+    }
+
+    .blog-filter__intro {
+        margin-bottom: 1.15rem;
+    }
+}
+
+/* Services Page Navbar Responsive Alignment */
+@media (max-width: 991.98px) {
+    body.services-page .site-navbar {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 767.98px) {
+    body.services-page .site-navbar {
+        margin-bottom: 0;
+    }
+}
+
+/* Contact Page Social Redesign Responsive */
+@media (max-width: 991.98px) {
+    .contact-social-grid {
+        margin-top: 1.4rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .contact-card__subcopy {
+        font-size: 0.95rem;
+    }
+
+    .contact-social {
+        padding: 0.95rem;
+        border-radius: 1.15rem;
+    }
+
+    .contact-social__label {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

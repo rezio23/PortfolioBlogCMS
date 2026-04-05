@@ -1215,6 +1215,182 @@ label {
 }
 /* End Login Page */
 
+/* Services Page */
+.services-hero {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(1.75rem, 3vw, 2.45rem);
+    border-radius: 2rem;
+    background: linear-gradient(145deg, rgba(130, 209, 255, 0.9) 0%, rgba(238, 246, 255, 0.95) 50%, rgba(255, 233, 217, 0.95) 100%);
+    box-shadow: 0 26px 72px rgba(50, 81, 124, 0.14);
+}
+
+.services-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 14% 18%, rgba(255, 255, 255, 0.92) 0, rgba(255, 255, 255, 0) 18%),
+        radial-gradient(circle at 84% 20%, rgba(255, 202, 185, 0.62) 0, rgba(255, 202, 185, 0) 17%),
+        radial-gradient(circle at 82% 82%, rgba(183, 205, 255, 0.28) 0, rgba(183, 205, 255, 0) 18%);
+    pointer-events: none;
+}
+
+.services-hero > .row,
+.services-highlight {
+    position: relative;
+    z-index: 1;
+}
+
+.services-hero__eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.55rem 0.9rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.68);
+    border: 1px solid rgba(255, 255, 255, 0.82);
+    color: #3d4b63;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.services-hero__title {
+    margin: 1rem 0 1rem;
+    max-width: 11ch;
+    color: #101521;
+    font-size: clamp(2.7rem, 4.8vw, 4.3rem);
+    line-height: 0.96;
+    letter-spacing: -0.06em;
+}
+
+.services-hero__text {
+    max-width: 35rem;
+    margin: 0;
+    color: rgba(16, 21, 33, 0.74);
+    font-size: 1.04rem;
+    line-height: 1.82;
+}
+
+.services-hero__actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.9rem;
+}
+
+.services-highlight,
+.services-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.74);
+    border-radius: 1.75rem;
+    background: rgba(255, 255, 255, 0.84);
+    box-shadow: 0 20px 48px rgba(49, 77, 119, 0.1);
+}
+
+.services-highlight {
+    height: 100%;
+    padding: 1.55rem;
+}
+
+.services-highlight__label,
+.services-card__kicker {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.45rem 0.8rem;
+    border-radius: 999px;
+    background: rgba(16, 21, 33, 0.05);
+    border: 1px solid rgba(32, 91, 144, 0.08);
+    color: #5b6b86;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.services-highlight__title,
+.services-card__title {
+    color: #101521;
+    letter-spacing: -0.04em;
+}
+
+.services-highlight__title {
+    display: block;
+    margin: 1rem 0 0.75rem;
+    font-size: 1.28rem;
+    line-height: 1.35;
+}
+
+.services-highlight p,
+.services-card__text {
+    color: #5f687b;
+    line-height: 1.75;
+}
+
+.services-card {
+    height: 100%;
+    padding: 1.55rem;
+}
+
+.services-card__icon {
+    width: 3.15rem;
+    height: 3.15rem;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #111827 0%, #3b82f6 100%);
+    border: 1px solid rgba(255, 255, 255, 0.28);
+    color: #fff;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 16px 28px rgba(26, 45, 78, 0.16);
+}
+
+.services-card__icon--alt {
+    background: linear-gradient(135deg, #0f766e 0%, #38bdf8 100%);
+}
+
+.services-card__title {
+    margin: 1rem 0 0.75rem;
+    font-size: clamp(1.6rem, 1.42rem + 0.4vw, 1.95rem);
+    line-height: 1.02;
+}
+
+.services-card__text {
+    margin: 0 0 1rem;
+}
+
+.services-card__list {
+    display: grid;
+    gap: 0.7rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.services-card__list li {
+    position: relative;
+    padding-left: 1.45rem;
+    color: #334155;
+    font-weight: 600;
+}
+
+.services-card__list li::before {
+    content: "";
+    position: absolute;
+    top: 0.55rem;
+    left: 0;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #82d1ff 0%, #ffbba1 100%);
+    box-shadow: 0 0 0 0.24rem rgba(130, 209, 255, 0.14);
+}
+/* End Services Page */
+
 /* Contact Page */
 .contact-shell {
     padding: 0.25rem 0 0;
@@ -2178,3 +2354,167 @@ body.portfolio-page .site-action-btn--outline:focus {
 
 
 
+
+
+/* Services Page Hero Alignment */
+body.services-page .site-navbar {
+    margin-bottom: -9.7rem;
+}
+
+/* Contact Page Social Redesign */
+.contact-card--info,
+.contact-card--form {
+    height: 100%;
+}
+
+.contact-card__title--compact {
+    font-size: clamp(1.85rem, 2.7vw, 2.35rem);
+}
+
+.contact-card__subcopy {
+    margin: 1rem 0 0;
+    color: #31415c;
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.75;
+}
+
+.contact-social-grid {
+    display: grid;
+    gap: 0.9rem;
+    margin-top: 1.6rem;
+}
+
+.contact-social {
+    display: flex;
+    gap: 0.95rem;
+    align-items: flex-start;
+    padding: 1rem 1.05rem;
+    border-radius: 1.3rem;
+    border: 1px solid rgba(23, 27, 36, 0.08);
+    background: rgba(255, 255, 255, 0.72);
+    color: #101521;
+    text-decoration: none;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background-color 0.22s ease;
+}
+
+.contact-social:hover,
+.contact-social:focus {
+    transform: translateY(-3px);
+    color: #101521;
+    border-color: rgba(32, 91, 144, 0.16);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 18px 36px rgba(49, 77, 119, 0.12);
+}
+
+.contact-social--disabled {
+    opacity: 0.8;
+    cursor: default;
+}
+
+.contact-social__icon {
+    width: 3.05rem;
+    height: 3.05rem;
+    border-radius: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #ffffff;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 16px 28px rgba(26, 45, 78, 0.12);
+}
+
+.contact-social--email .contact-social__icon {
+    background: linear-gradient(135deg, #1d4ed8 0%, #38bdf8 100%);
+}
+
+.contact-social--facebook .contact-social__icon {
+    background: linear-gradient(135deg, #1877f2 0%, #4f8ffb 100%);
+}
+
+.contact-social--instagram .contact-social__icon {
+    background: linear-gradient(135deg, #f58529 0%, #dd2a7b 52%, #8134af 100%);
+}
+
+.contact-social--tiktok .contact-social__icon {
+    background: linear-gradient(135deg, #111827 0%, #25f4ee 100%);
+}
+
+.contact-social--github .contact-social__icon {
+    background: linear-gradient(135deg, #111827 0%, #374151 100%);
+}
+
+.contact-social__body {
+    min-width: 0;
+    display: grid;
+    gap: 0.22rem;
+    flex: 1;
+}
+
+.contact-social__label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.contact-social__label strong {
+    color: #101521;
+    font-size: 1rem;
+}
+
+.contact-social__action {
+    color: #205b90;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.contact-social__meta {
+    color: #334155;
+    font-weight: 700;
+    word-break: break-word;
+}
+
+.contact-social__hint {
+    color: #5f687b;
+    font-size: 0.93rem;
+    line-height: 1.65;
+}
+
+.contact-form__grid {
+    margin-top: 0.1rem;
+}
+
+.contact-form__field {
+    display: grid;
+    gap: 0.45rem;
+}
+
+.contact-form__errors {
+    padding: 0.9rem 1rem;
+    border-radius: 1rem;
+    background: rgba(220, 38, 38, 0.08);
+    border: 1px solid rgba(220, 38, 38, 0.16);
+    color: #b42318;
+    font-weight: 600;
+}
+
+.contact-form__errors ul {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.contact-form__error {
+    color: #b42318;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Login Page Navbar Overlap Fix */
+body.login-page .site-navbar {
+    position: relative;
+    top: auto;
+    margin-bottom: 0.85rem;
+}

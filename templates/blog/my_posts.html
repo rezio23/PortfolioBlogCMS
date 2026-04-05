@@ -1,15 +1,48 @@
-﻿{% extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% block title %}My Posts | {{ site_name }}{% endblock %}
+{% block body_class %}blog-page{% endblock %}
+{% block main_class %}pt-4 pb-5{% endblock %}
 
 {% block content %}
-<div class="d-flex justify-content-between align-items-center mb-4"><h1 class="mb-0">My Posts</h1><a class="btn btn-dark" href="{% url 'blog:post_create' %}">New Post</a></div>
-<div class="row g-4">
+<section class="blog-page-header mb-4 portfolio-motion-surface" data-reveal data-scroll-float data-float-depth="8">
+    <div class="blog-page-header__row">
+        <div>
+            <span class="blog-page-header__eyebrow">Workspace</span>
+            <h1 class="blog-page-header__title">My Posts</h1>
+            <p class="blog-page-header__text">Manage drafts, review published work, and jump back into editing quickly.</p>
+        </div>
+        <a class="btn hero-btn hero-btn--dark portfolio-hover-button" href="{% url 'blog:post_create' %}">New Post</a>
+    </div>
+</section>
+
+<section class="row g-4 blog-post-grid">
     {% for post in posts %}
-        <div class="col-md-6"><div class="card h-100 border-0 shadow-sm"><div class="card-body"><p class="small text-muted mb-2">{{ post.get_status_display }}</p><h2 class="h5"><a class="text-decoration-none" href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2><div class="d-flex gap-2 mt-3"><a class="btn btn-sm btn-outline-dark" href="{% url 'blog:post_update' post.slug %}">Edit</a><a class="btn btn-sm btn-outline-danger" href="{% url 'blog:post_delete' post.slug %}">Delete</a></div></div></div></div>
+        <div class="col-md-6 col-xl-4" data-reveal data-reveal-delay="{{ forloop.counter0|add:1 }}0">
+            <article class="blog-post-card post-card h-100 portfolio-hover-card" data-scroll-float data-float-depth="12">
+                <div class="blog-post-card__body">
+                    <div class="blog-post-card__meta">
+                        <span class="blog-post-card__status blog-post-card__status--{{ post.status }}">{{ post.get_status_display }}</span>
+                        <span>{{ post.updated_at|date:'M d, Y' }}</span>
+                    </div>
+                    <h2 class="blog-post-card__title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                    <p class="blog-post-card__text">{{ post.excerpt|default:post.content|truncatewords:22 }}</p>
+                    <div class="blog-post-card__actions">
+                        <a class="blog-post-card__action" href="{% url 'blog:post_update' post.slug %}">Edit</a>
+                        <a class="blog-post-card__action blog-post-card__action--danger" href="{% url 'blog:post_delete' post.slug %}">Delete</a>
+                    </div>
+                </div>
+            </article>
+        </div>
     {% empty %}
-        <p>You have not created any posts yet.</p>
+        <div class="col-12">
+            <div class="blog-empty portfolio-motion-surface">
+                <h2 class="blog-empty__title">You have not created any posts yet</h2>
+                <p class="blog-empty__text mb-0">Start a new post when you are ready to publish your first update.</p>
+            </div>
+        </div>
     {% endfor %}
-</div>
+</section>
+
 {% include 'includes/pagination.html' %}
 {% endblock %}

@@ -1,11 +1,72 @@
 {% extends 'base.html' %}
 
 {% block title %}Services | {{ site_name }}{% endblock %}
+{% block body_class %}services-page{% endblock %}
+{% block main_class %}pt-4 pb-5{% endblock %}
 
 {% block content %}
-<h1 class="mb-4">Services</h1>
-<div class="row g-4">
-    <div class="col-md-6"><div class="card h-100"><div class="card-body"><h2 class="h5">Web Development</h2><p>Build and maintain content websites, dashboards, and publishing platforms.</p></div></div></div>
-    <div class="col-md-6"><div class="card h-100"><div class="card-body"><h2 class="h5">Content Systems</h2><p>Structure your posts, categories, and site pages in a CMS you can actually own.</p></div></div></div>
-</div>
+<section class="about-hero services-page-hero mb-5 portfolio-motion-surface" data-reveal data-scroll-float data-float-depth="8">
+    <div class="row g-4 align-items-center">
+        <div class="col-lg-7">
+            <span class="about-hero__eyebrow">Services</span>
+            <h1 class="about-hero__title">Practical site building for content, structure, and long-term growth.</h1>
+            <p class="about-hero__text">The work here focuses on building clear publishing experiences, maintainable content systems, and practical web pages that are easy to update as the project grows.</p>
+            <p class="about-hero__subtext">The goal is to create pages and systems that feel polished, readable, and dependable in both light and dark mode.</p>
+            <div class="about-hero__actions">
+                <a class="btn hero-btn hero-btn--dark portfolio-hover-button" href="{% url 'contact:contact' %}">Start a Project</a>
+                <a class="btn hero-btn hero-btn--light portfolio-hover-button" href="{% url 'blog:blog_list' %}">Explore the Blog</a>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="about-showcase services-page-hero__showcase">
+                <article class="about-panel about-panel--primary portfolio-hover-card" data-scroll-float data-float-depth="12">
+                    <span class="about-panel__label">Built for</span>
+                    <strong class="about-panel__title">Creators, portfolios, and publishing workflows that need clarity without feeling generic.</strong>
+                    <p class="mb-0">Each service is shaped around clean layouts, understandable structure, and a UI that still feels personal across the whole site.</p>
+                </article>
+                <div class="about-mini-grid">
+                    <article class="about-panel portfolio-hover-card" data-scroll-float data-float-depth="10">
+                        <span class="about-panel__label">Focus</span>
+                        <strong class="about-panel__title">Readable interfaces</strong>
+                        <p class="mb-0">Calmer sections, stronger hierarchy, and layouts that stay easy to follow.</p>
+                    </article>
+                    <article class="about-panel portfolio-hover-card" data-scroll-float data-float-depth="10">
+                        <span class="about-panel__label">Foundation</span>
+                        <strong class="about-panel__title">Reusable structure</strong>
+                        <p class="mb-0">Templates and systems that stay maintainable as content and features grow.</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="row g-4 services-grid">
+    <div class="col-lg-6" data-reveal data-reveal-delay="60">
+        <article class="services-card h-100 portfolio-hover-card" data-scroll-float data-float-depth="12">
+            <span class="services-card__icon"><i class="fa-solid fa-code"></i></span>
+            <span class="services-card__kicker">Service 01</span>
+            <h2 class="services-card__title">Web Development</h2>
+            <p class="services-card__text">Build and maintain content websites, dashboards, and publishing platforms with layouts that feel polished and practical.</p>
+            <ul class="services-card__list">
+                <li>Responsive page structure</li>
+                <li>Clean interface implementation</li>
+                <li>Scalable template-based builds</li>
+            </ul>
+        </article>
+    </div>
+    <div class="col-lg-6" data-reveal data-reveal-delay="140">
+        <article class="services-card h-100 portfolio-hover-card" data-scroll-float data-float-depth="16">
+            <span class="services-card__icon services-card__icon--alt"><i class="fa-solid fa-layer-group"></i></span>
+            <span class="services-card__kicker">Service 02</span>
+            <h2 class="services-card__title">Content Systems</h2>
+            <p class="services-card__text">Structure your posts, categories, and site pages in a CMS you can actually own, manage, and expand over time.</p>
+            <ul class="services-card__list">
+                <li>Better content organization</li>
+                <li>Reusable page patterns</li>
+                <li>Growth-ready CMS structure</li>
+            </ul>
+        </article>
+    </div>
+</section>
 {% endblock %}

@@ -6,15 +6,98 @@
 
 {% block content %}
 <section class="contact-shell">
-    <div class="row justify-content-center">
-        <div class="col-lg-8 col-xl-7">
-            <div class="contact-card portfolio-motion-surface" data-reveal data-scroll-float data-float-depth="8">
+    <div class="row g-4 align-items-stretch">
+        <div class="col-lg-5">
+            <div class="contact-card contact-card--info portfolio-motion-surface" data-reveal data-scroll-float data-float-depth="8">
                 <span class="contact-card__eyebrow">Get in touch</span>
-                <h1 class="contact-card__title">Contact Me</h1>
+                <h1 class="contact-card__title">Let&apos;s connect through the channel that fits best.</h1>
+                <p class="contact-card__text">Use the form for direct inquiries, or reach out through Facebook, Instagram, TikTok, email, and GitHub.</p>
+                <p class="contact-card__subcopy">Every channel below can be managed from your Site Configuration, so this page stays easy to update as your brand grows.</p>
+
+                <div class="contact-social-grid">
+                    {% for channel in contact_channels %}
+                        {% if channel.url %}
+                            <a class="contact-social contact-social--{{ channel.key }} portfolio-hover-card" href="{{ channel.url }}"{% if channel.new_tab %} target="_blank" rel="noreferrer"{% endif %}>
+                                <span class="contact-social__icon"><i class="{{ channel.icon }}"></i></span>
+                                <span class="contact-social__body">
+                                    <span class="contact-social__label">
+                                        <strong>{{ channel.title }}</strong>
+                                        <span class="contact-social__action">{{ channel.cta }}</span>
+                                    </span>
+                                    <span class="contact-social__meta">{{ channel.value }}</span>
+                                    <span class="contact-social__hint">{{ channel.hint }}</span>
+                                </span>
+                            </a>
+                        {% else %}
+                            <div class="contact-social contact-social--{{ channel.key }} contact-social--disabled">
+                                <span class="contact-social__icon"><i class="{{ channel.icon }}"></i></span>
+                                <span class="contact-social__body">
+                                    <span class="contact-social__label">
+                                        <strong>{{ channel.title }}</strong>
+                                        <span class="contact-social__action">{{ channel.cta }}</span>
+                                    </span>
+                                    <span class="contact-social__meta">{{ channel.value }}</span>
+                                    <span class="contact-social__hint">{{ channel.hint }}</span>
+                                </span>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-7">
+            <div class="contact-card contact-card--form portfolio-motion-surface" data-reveal data-reveal-delay="80" data-scroll-float data-float-depth="10">
+                <span class="contact-card__eyebrow">Send a message</span>
+                <h2 class="contact-card__title contact-card__title--compact">Contact Me</h2>
                 <p class="contact-card__text">Use this form to receive inquiries directly into the database.</p>
-                <form method="post" class="contact-form">
+
+                <form method="post" class="contact-form" novalidate>
                     {% csrf_token %}
-                    {{ form.as_p }}
+
+                    {% if form.non_field_errors %}
+                        <div class="contact-form__errors">{{ form.non_field_errors }}</div>
+                    {% endif %}
+
+                    <div class="row g-3 contact-form__grid">
+                        <div class="col-md-6">
+                            <div class="contact-form__field">
+                                {{ form.name.label_tag }}
+                                {{ form.name }}
+                                {% if form.name.errors %}
+                                    <div class="contact-form__error">{{ form.name.errors|striptags }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="contact-form__field">
+                                {{ form.email.label_tag }}
+                                {{ form.email }}
+                                {% if form.email.errors %}
+                                    <div class="contact-form__error">{{ form.email.errors|striptags }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="contact-form__field">
+                                {{ form.subject.label_tag }}
+                                {{ form.subject }}
+                                {% if form.subject.errors %}
+                                    <div class="contact-form__error">{{ form.subject.errors|striptags }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="contact-form__field">
+                                {{ form.message.label_tag }}
+                                {{ form.message }}
+                                {% if form.message.errors %}
+                                    <div class="contact-form__error">{{ form.message.errors|striptags }}</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
                     <button type="submit" class="btn hero-btn hero-btn--dark contact-form__submit">Send Message</button>
                 </form>
             </div>
@@ -22,4 +105,3 @@
     </div>
 </section>
 {% endblock %}
-
