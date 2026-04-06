@@ -786,3 +786,48 @@
     }
 }
 
+
+/* Register Page Responsive */
+@media (max-width: 991.98px) {
+    .auth-register {
+        max-width: 100%;
+    }
+
+    .auth-register__card {
+        padding: 1.35rem;
+        border-radius: 1.5rem;
+    }
+
+    .auth-register__hero {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .auth-register__login {
+        white-space: normal;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .auth-register {
+        padding-top: 0.45rem;
+    }
+
+    .auth-register__card {
+        padding: 1.05rem;
+        border-radius: 1.25rem;
+    }
+
+    .auth-register__heading {
+        font-size: clamp(2rem, 9vw, 2.55rem);
+    }
+
+    .auth-register__grid--split {
+        grid-template-columns: 1fr;
+    }
+
+    body.register-page .site-main.pt-4 {
+        padding-top: 0.95rem !important;
+    }
+}
+/* End Register Page Responsive */

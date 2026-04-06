@@ -40,6 +40,48 @@ class UserRegistrationForm(UserCreationForm):
         model = User
         fields = ("username", "first_name", "last_name", "email")
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        field_attrs = {
+            "username": {
+                "placeholder": "Choose a username",
+                "autocomplete": "username",
+            },
+            "first_name": {
+                "placeholder": "Enter your first name",
+                "autocomplete": "given-name",
+            },
+            "last_name": {
+                "placeholder": "Enter your last name",
+                "autocomplete": "family-name",
+            },
+            "email": {
+                "placeholder": "Enter your email address",
+                "autocomplete": "email",
+            },
+            "password1": {
+                "placeholder": "Create a secure password",
+                "autocomplete": "new-password",
+            },
+            "password2": {
+                "placeholder": "Confirm your password",
+                "autocomplete": "new-password",
+            },
+        }
+
+        self.fields["email"].label = "Email address"
+        self.fields["email"].help_text = "We will use this for password recovery and account updates."
+
+        for field_name, attrs in field_attrs.items():
+            if field_name not in self.fields:
+                continue
+
+            field = self.fields[field_name]
+            classes = field.widget.attrs.get("class", "")
+            field.widget.attrs["class"] = f"{classes} auth-login__input auth-register__input".strip()
+            field.widget.attrs.update(attrs)
+
 
 class UserUpdateForm(forms.ModelForm):
     class Meta:
@@ -51,3 +93,4 @@ class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
         fields = ("bio", "location", "website", "profile_image")
+

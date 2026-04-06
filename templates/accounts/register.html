@@ -1,20 +1,111 @@
-﻿{% extends 'base.html' %}
+{% extends 'base.html' %}
 
-{% block title %}Register | {{ site_name }}{% endblock %}
+{% block title %}Create Account | {{ site_name }}{% endblock %}
+{% block body_class %}register-page{% endblock %}
+{% block main_class %}pt-4 pb-5{% endblock %}
 
 {% block content %}
-<div class="row justify-content-center">
-    <div class="col-md-7 col-lg-6">
-        <div class="card shadow-sm border-0">
-            <div class="card-body p-4">
-                <h1 class="h3 mb-3">Create Account</h1>
-                <form method="post">
+<section class="auth-register">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <div class="auth-register__card">
+                <div class="auth-register__header">
+                    <span class="auth-register__eyebrow">Create account</span>
+                    <div class="auth-register__hero">
+                        <div class="auth-register__intro">
+                            <h1 class="auth-register__heading">Create your {{ site_name }} account</h1>
+                            <p class="auth-register__subtext">Set up your account to access the dashboard, manage posts, and recover access easily later.</p>
+                        </div>
+                        <p class="auth-register__login">Already have an account? <a href="{% url 'login' %}">Sign in</a></p>
+                    </div>
+                </div>
+
+                {% if form.non_field_errors %}
+                    <div class="auth-register__errors" role="alert">
+                        {% for error in form.non_field_errors %}
+                            <div>{{ error }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <form method="post" class="auth-register__form" novalidate>
                     {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" class="btn btn-warning">Register</button>
+
+                    <section class="auth-register__section auth-register__section--first">
+                        <div class="auth-register__section-head">
+                            <h2 class="auth-register__section-title">Account details</h2>
+                            <p class="auth-register__section-copy">These details are used for sign-in and account recovery.</p>
+                        </div>
+
+                        <div class="auth-register__field{% if form.username.errors %} auth-register__field--invalid{% endif %}">
+                            {{ form.username.label_tag }}
+                            {{ form.username }}
+                            {% if form.username.help_text %}
+                                <!-- <div class="auth-register__hint">{{ form.username.help_text|safe }}</div> -->
+                            {% endif %}
+                            {% for error in form.username.errors %}
+                                <div class="auth-register__field-error">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="auth-register__grid auth-register__grid--split">
+                            <div class="auth-register__field{% if form.first_name.errors %} auth-register__field--invalid{% endif %}">
+                                {{ form.first_name.label_tag }}
+                                {{ form.first_name }}
+                                {% for error in form.first_name.errors %}
+                                    <div class="auth-register__field-error">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                            <div class="auth-register__field{% if form.last_name.errors %} auth-register__field--invalid{% endif %}">
+                                {{ form.last_name.label_tag }}
+                                {{ form.last_name }}
+                                {% for error in form.last_name.errors %}
+                                    <div class="auth-register__field-error">{{ error }}</div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                        <div class="auth-register__field{% if form.email.errors %} auth-register__field--invalid{% endif %}">
+                            {{ form.email.label_tag }}
+                            {{ form.email }}
+                            {% if form.email.help_text %}
+                                <div class="auth-register__hint">{{ form.email.help_text }}</div>
+                            {% endif %}
+                            {% for error in form.email.errors %}
+                                <div class="auth-register__field-error">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                    <section class="auth-register__section">
+                        <div class="auth-register__field{% if form.password1.errors %} auth-register__field--invalid{% endif %}">
+                            {{ form.password1.label_tag }}
+                            {{ form.password1 }}
+                            {% for error in form.password1.errors %}
+                                <div class="auth-register__field-error">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+
+                        <div class="auth-register__field{% if form.password2.errors %} auth-register__field--invalid{% endif %}">
+                            {{ form.password2.label_tag }}
+                            {{ form.password2 }}
+                            {% if form.password1.help_text %}
+                                <div class="auth-register__hint auth-register__hint--list">{{ form.password1.help_text|safe }}</div>
+                            {% endif %}
+                            {% if form.password2.help_text %}
+                                <div class="auth-register__hint">{{ form.password2.help_text|safe }}</div>
+                            {% endif %}
+                            {% for error in form.password2.errors %}
+                                <div class="auth-register__field-error">{{ error }}</div>
+                            {% endfor %}
+                        </div>
+                    </section>
+
+                    <button type="submit" class="btn hero-btn hero-btn--dark auth-register__submit">Create Account</button>
+                    <p class="auth-register__meta">You can update your profile details later from the dashboard.</p>
                 </form>
             </div>
         </div>
     </div>
-</div>
+</section>
 {% endblock %}

@@ -52,18 +52,10 @@
                     {% endfor %}
                 </div>
 
-                <p class="auth-login__helper mb-0">
-                    {% if social_shortcuts_ready %}
-                        Configured shortcuts will open their provider flow directly.
-                    {% else %}
-                        Social buttons are ready for provider wiring. Username and password sign-in already works now.
-                    {% endif %}
-                </p>
-
                 <div class="auth-login__divider"><span>or sign in with your account</span></div>
 
                 {% if form.non_field_errors %}
-                    <div class="alert alert-danger mb-3" role="alert">
+                    <div class="auth-login__errors" role="alert">
                         {% for error in form.non_field_errors %}
                             <div>{{ error }}</div>
                         {% endfor %}
