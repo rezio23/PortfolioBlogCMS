@@ -545,6 +545,37 @@ html[data-theme="dark"] .blog-post-card__link {
     color: #8bdcff;
 }
 
+html[data-theme="dark"] .blog-post-card__poster {
+    border-bottom-color: rgba(120, 135, 183, 0.14);
+    background: linear-gradient(145deg, #102236 0%, #15344a 45%, #1f6b78 100%);
+}
+
+html[data-theme="dark"] .blog-post-card__poster::after {
+    background:
+        linear-gradient(180deg, rgba(5, 9, 18, 0.08) 0%, rgba(5, 9, 18, 0.56) 100%),
+        radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.12) 0, rgba(255, 255, 255, 0) 18%),
+        radial-gradient(circle at 86% 18%, rgba(24, 239, 206, 0.16) 0, rgba(24, 239, 206, 0) 20%);
+}
+
+html[data-theme="dark"] .blog-post-card__poster-fallback {
+    background:
+        linear-gradient(145deg, rgba(8, 16, 30, 0.96) 0%, rgba(18, 38, 58, 0.92) 52%, rgba(21, 92, 105, 0.9) 100%);
+}
+
+html[data-theme="dark"] .blog-post-card__poster-fallback::before {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+html[data-theme="dark"] :is(.blog-post-card__poster-kicker, .blog-post-card__poster-badge, .blog-post-card__poster-date) {
+    background: rgba(7, 11, 20, 0.34);
+    border-color: rgba(200, 215, 255, 0.14);
+    color: #eff5ff;
+}
+
+html[data-theme="dark"] .blog-post-card__poster-caption {
+    color: rgba(222, 232, 255, 0.82);
+}
+
 html[data-theme="dark"] .blog-post-card__action {
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(255, 255, 255, 0.1);
@@ -752,3 +783,4 @@ html[data-theme="dark"] .contact-form__errors {
 html[data-theme="dark"] .contact-form__error {
     color: #fca5a5;
 }
+

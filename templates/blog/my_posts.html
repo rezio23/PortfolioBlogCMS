@@ -19,20 +19,7 @@
 <section class="row g-4 blog-post-grid">
     {% for post in posts %}
         <div class="col-md-6 col-xl-4" data-reveal data-reveal-delay="{{ forloop.counter0|add:1 }}0">
-            <article class="blog-post-card post-card h-100 portfolio-hover-card" data-scroll-float data-float-depth="12">
-                <div class="blog-post-card__body">
-                    <div class="blog-post-card__meta">
-                        <span class="blog-post-card__status blog-post-card__status--{{ post.status }}">{{ post.get_status_display }}</span>
-                        <span>{{ post.updated_at|date:'M d, Y' }}</span>
-                    </div>
-                    <h2 class="blog-post-card__title"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
-                    <p class="blog-post-card__text">{{ post.excerpt|default:post.content|truncatewords:22 }}</p>
-                    <div class="blog-post-card__actions">
-                        <a class="blog-post-card__action" href="{% url 'blog:post_update' post.slug %}">Edit</a>
-                        <a class="blog-post-card__action blog-post-card__action--danger" href="{% url 'blog:post_delete' post.slug %}">Delete</a>
-                    </div>
-                </div>
-            </article>
+            {% include 'blog/includes/post_card.html' with post=post manage_mode=True %}
         </div>
     {% empty %}
         <div class="col-12">

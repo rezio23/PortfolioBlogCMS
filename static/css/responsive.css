@@ -350,6 +350,25 @@
     .blog-hero__actions .btn {
         width: 100%;
     }
+
+    .blog-post-card__poster {
+        aspect-ratio: 3 / 2;
+    }
+
+    .blog-post-card__poster-fallback,
+    .blog-post-card__poster-overlay {
+        padding: 0.9rem;
+    }
+
+    .blog-post-card__poster-headline {
+        max-width: 11ch;
+        font-size: 1.35rem;
+    }
+
+    .blog-post-card__poster-caption {
+        font-size: 0.84rem;
+        line-height: 1.45;
+    }
 }
 /* End Blog Page Responsive */
 
@@ -705,3 +724,6 @@
         align-items: flex-start;
     }
 }
+
+
+
