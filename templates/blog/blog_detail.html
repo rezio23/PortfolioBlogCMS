@@ -1,29 +1,34 @@
-﻿{% extends 'base.html' %}
+{% extends 'base.html' %}
 
 {% block title %}{{ post.title }} | {{ site_name }}{% endblock %}
+{% block body_class %}blog-page blog-detail-page{% endblock %}
+{% block main_class %}blog-detail-main pb-5{% endblock %}
 
 {% block content %}
-<article class="card border-0 shadow-sm">
-    <div class="card-body p-4 p-lg-5">
-        <p class="text-muted mb-2">{{ post.created_at|date:'M d, Y' }} · {{ reading_time }} min read</p>
-        <h1 class="mb-3">{{ post.title }}</h1>
+<article class="blog-detail blog-detail-card blog-detail-card--spaced portfolio-motion-surface" data-reveal data-scroll-float data-float-depth="10">
+    <div class="blog-detail__header">
+        <p class="blog-detail__meta">{{ post.created_at|date:'M d, Y' }} | {{ reading_time }} min read</p>
+        <h1 class="blog-detail__title">{{ post.title }}</h1>
         {% if post.category %}
-            <p><a href="{% url 'blog:category_posts' post.category.slug %}">{{ post.category.name }}</a></p>
-        {% endif %}
-        <div class="content-body">{{ post.content|linebreaks }}</div>
-        {% if post.tags.exists %}
-            <div class="mt-4 d-flex gap-2 flex-wrap">
-                {% for tag in post.tags.all %}
-                    <a class="badge text-bg-light text-decoration-none" href="{% url 'blog:tag_posts' tag.slug %}">#{{ tag.name }}</a>
-                {% endfor %}
-            </div>
-        {% endif %}
-        {% if user == post.author %}
-            <div class="mt-4 d-flex gap-2">
-                <a class="btn btn-dark" href="{% url 'blog:post_update' post.slug %}">Edit</a>
-                <a class="btn btn-outline-danger" href="{% url 'blog:post_delete' post.slug %}">Delete</a>
-            </div>
+            <a class="blog-detail__category" href="{% url 'blog:category_posts' post.category.slug %}">{{ post.category.name }}</a>
         {% endif %}
     </div>
+
+    <div class="blog-detail__content content-body">{{ post.content|linebreaks }}</div>
+
+    {% if post.tags.exists %}
+        <div class="blog-detail__tags">
+            {% for tag in post.tags.all %}
+                <a class="blog-detail__tag" href="{% url 'blog:tag_posts' tag.slug %}">#{{ tag.name }}</a>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    {% if user == post.author %}
+        <div class="blog-detail__actions">
+            <a class="btn hero-btn hero-btn--dark portfolio-hover-button" href="{% url 'blog:post_update' post.slug %}">Edit</a>
+            <a class="btn hero-btn hero-btn--light portfolio-hover-button" href="{% url 'blog:post_delete' post.slug %}">Delete</a>
+        </div>
+    {% endif %}
 </article>
 {% endblock %}

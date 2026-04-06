@@ -784,3 +784,34 @@ html[data-theme="dark"] .contact-form__error {
     color: #fca5a5;
 }
 
+
+html[data-theme="dark"] .blog-detail-card {
+    background: linear-gradient(180deg, rgba(35, 40, 58, 0.96) 0%, rgba(18, 22, 34, 0.98) 100%);
+    border-color: rgba(120, 135, 183, 0.14);
+    box-shadow: 0 24px 54px rgba(4, 7, 17, 0.3);
+}
+
+html[data-theme="dark"] .blog-detail-card::before {
+    background:
+        radial-gradient(circle at 16% 18%, rgba(115, 161, 255, 0.06) 0, rgba(115, 161, 255, 0) 14%),
+        radial-gradient(circle at 84% 18%, rgba(24, 239, 206, 0.05) 0, rgba(24, 239, 206, 0) 12%),
+        radial-gradient(circle at 82% 82%, rgba(61, 91, 170, 0.05) 0, rgba(61, 91, 170, 0) 14%);
+}
+
+html[data-theme="dark"] .blog-detail__meta {
+    color: rgba(184, 196, 231, 0.72);
+}
+
+html[data-theme="dark"] .blog-detail__title {
+    color: #eef2ff;
+}
+
+html[data-theme="dark"] .blog-detail__content {
+    color: rgba(220, 228, 249, 0.88);
+}
+
+html[data-theme="dark"] :is(.blog-detail__category, .blog-detail__tag) {
+    background: rgba(115, 161, 255, 0.12);
+    border-color: rgba(139, 156, 204, 0.18);
+    color: #d9e7ff;
+}

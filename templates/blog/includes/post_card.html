@@ -40,10 +40,10 @@
             {% endif %}
         </div>
         <h2 class="blog-post-card__title">
-            <a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title|truncatechars:58 }}</a>
+            <a href="{{ post.get_absolute_url }}" title="{{ post.title }}">{{ post.title|truncatechars:54 }}</a>
         </h2>
         <p class="blog-post-card__text" title="{{ post.excerpt|default:post.content }}">
-            {{ post.excerpt|default:post.content|truncatechars:132 }}
+            {{ post.excerpt|default:post.content|truncatechars:104 }}
         </p>
         {% if manage_mode %}
             <div class="blog-post-card__actions">

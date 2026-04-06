@@ -352,7 +352,7 @@
     }
 
     .blog-post-card__poster {
-        aspect-ratio: 3 / 2;
+        aspect-ratio: 4 / 3;
     }
 
     .blog-post-card__poster-fallback,
@@ -724,6 +724,65 @@
         align-items: flex-start;
     }
 }
+@media (max-width: 767.98px) {
+    .blog-detail-card {
+        padding: 1.25rem;
+        border-radius: 1.5rem;
+    }
 
+    .blog-detail__title {
+        font-size: clamp(2rem, 10vw, 2.7rem);
+    }
 
+    .blog-detail__actions {
+        flex-direction: column;
+    }
+
+    .blog-detail__actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .blog-detail-card--spaced {
+        margin-top: 1.75rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .blog-detail-card--spaced {
+        margin-top: 1.1rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .blog-detail-main {
+        padding-top: 0.4rem !important;
+    }
+
+    .blog-detail-card--spaced {
+        margin-top: 0.45rem;
+    }
+}
+
+/* Blog Detail Final Navbar Gap Tuning */
+@media (max-width: 991.98px) {
+    .blog-detail-main {
+        padding-top: 0.5rem !important;
+    }
+
+    .blog-detail-card--spaced {
+        margin-top: 0.55rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .blog-detail-main {
+        padding-top: 0.35rem !important;
+    }
+
+    .blog-detail-card--spaced {
+        margin-top: 0.4rem;
+    }
+}
 

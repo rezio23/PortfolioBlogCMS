@@ -40,7 +40,7 @@
 .blog-post-card__poster {
     position: relative;
     display: block;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 8 / 6;
     overflow: hidden;
     background: #102236;
     border-bottom: 1px solid rgba(23, 27, 36, 0.08);
@@ -367,14 +367,14 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    padding: 1.25rem 1.25rem 1.15rem;
+    padding: 1.1rem 1.15rem 1rem;
 }
 
 .blog-post-card__meta {
     align-items: center;
     justify-content: space-between;
-    gap: 0.75rem;
-    margin-bottom: 0.8rem;
+    gap: 0.65rem;
+    margin-bottom: 0.65rem;
 }
 
 .blog-post-card__meta > span {
@@ -384,10 +384,10 @@
 }
 
 .blog-post-card__title {
-    margin: 0 0 0.65rem;
-    font-size: clamp(1.35rem, 1.18rem + 0.42vw, 1.75rem);
-    line-height: 1.08;
-    min-height: calc(1.08em * 2);
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.32rem, 1.12rem + 0.4vw, 1.68rem);
+    line-height: 1.06;
+    min-height: calc(1.06em * 2);
 }
 
 .blog-post-card__title a {
@@ -409,16 +409,17 @@
     margin: 0;
     display: -webkit-box;
     overflow: hidden;
-    min-height: calc(1.75em * 3);
-    -webkit-line-clamp: 3;
+    min-height: calc(1.68em * 2);
+    line-height: 1.68;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 
 .blog-post-card__tags {
-    gap: 0.55rem;
-    min-height: 2.5rem;
+    gap: 0.5rem;
+    min-height: 2.2rem;
     margin-top: auto;
-    padding-top: 0.85rem;
+    padding-top: 0.7rem;
     align-items: flex-start;
 }
 
@@ -426,7 +427,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.55rem;
-    margin-top: 0.9rem;
+    margin-top: 0.7rem;
     color: #205b90;
     font-weight: 700;
 }
@@ -448,9 +449,9 @@
 }
 
 .blog-post-card__actions {
-    gap: 0.75rem;
+    gap: 0.65rem;
     margin-top: auto;
-    padding-top: 0.95rem;
+    padding-top: 0.8rem;
 }
 
 .blog-post-card__action {
@@ -533,6 +534,10 @@
 /* Blog Page Alignment With Home/About */
 body.blog-page .site-navbar {
     margin-bottom: -9.7rem;
+}
+
+body.blog-detail-page .site-navbar {
+    margin-bottom: 0;
 }
 
 .blog-page-hero__title {
@@ -662,4 +667,113 @@ body.blog-page .site-navbar {
 
 
 
+
+
+
+
+
+
+
+
+
+
+.blog-detail-card {
+    position: relative;
+    overflow: hidden;
+    padding: clamp(1.6rem, 3vw, 2.65rem);
+    border: 1px solid rgba(255, 255, 255, 0.72);
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.84);
+    box-shadow: 0 24px 58px rgba(49, 77, 119, 0.14);
+}
+
+.blog-detail-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 16% 18%, rgba(130, 209, 255, 0.16) 0, rgba(130, 209, 255, 0) 18%),
+        radial-gradient(circle at 84% 18%, rgba(255, 202, 185, 0.12) 0, rgba(255, 202, 185, 0) 15%),
+        radial-gradient(circle at 82% 82%, rgba(115, 161, 255, 0.08) 0, rgba(115, 161, 255, 0) 16%);
+}
+
+.blog-detail-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.blog-detail__header {
+    max-width: 58rem;
+}
+
+.blog-detail__meta {
+    margin: 0 0 0.9rem;
+    color: #7b88a3;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.blog-detail__title {
+    margin: 0 0 1rem;
+    color: #101521;
+    font-size: clamp(2.3rem, 4vw, 3.8rem);
+    line-height: 1.02;
+    letter-spacing: -0.05em;
+}
+
+.blog-detail__category,
+.blog-detail__tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 0.82rem;
+    border-radius: 999px;
+    background: rgba(130, 209, 255, 0.16);
+    border: 1px solid rgba(32, 91, 144, 0.12);
+    color: #1d4f85;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.blog-detail__content {
+    margin-top: 1.75rem;
+    color: #2a3345;
+    font-size: 1.06rem;
+    line-height: 1.9;
+}
+
+.blog-detail__content p {
+    margin-bottom: 1.15rem;
+}
+
+.blog-detail__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.9rem;
+}
+
+.blog-detail__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 2rem;
+}
+
+.blog-detail-card--spaced {
+    margin-top: 4.5rem;
+}
+
+/* Blog Detail Final Navbar Gap Tuning */
+.blog-detail-main {
+    padding-top: 0.65rem !important;
+}
+
+.blog-detail-card--spaced {
+    margin-top: 0.7rem;
+}
 
