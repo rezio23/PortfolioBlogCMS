@@ -15,13 +15,19 @@
                 </div>
                 <h1 class="hero-copy__title portfolio-showcase__title">Full-stack developer building clean backend systems and practical web products.</h1>
                 <p class="hero-copy__text">I work across ASP.NET MVC, AJAX, Django, React, TypeScript, and database tools while growing through internship experience, university study, and real project delivery.</p>
-                <div class="portfolio-showcase__stack" data-reveal data-reveal-delay="110">
-                    <span class="portfolio-showcase__stack-label">Core stack</span>
-                    <span class="portfolio-showcase__stack-item"><i class="fa-solid fa-layer-group"></i>ASP.NET MVC</span>
-                    <span class="portfolio-showcase__stack-item"><i class="fa-solid fa-bolt"></i>AJAX</span>
-                    <span class="portfolio-showcase__stack-item"><i class="fa-brands fa-python"></i>Django</span>
-                    <span class="portfolio-showcase__stack-item"><i class="fa-brands fa-react"></i>React</span>
-                    <span class="portfolio-showcase__stack-item"><i class="fa-solid fa-database"></i>SQL + MySQL</span>
+                <div class="portfolio-showcase__stack" id="portfolio-stack" data-reveal data-reveal-delay="110">
+                    <div class="portfolio-showcase__stack-head">
+                        <span class="portfolio-showcase__stack-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></span>
+                        <span class="portfolio-showcase__stack-label">Stack</span>
+                    </div>
+                    <div class="portfolio-showcase__stack-grid">
+                        <span class="portfolio-showcase__stack-item">ASP.NET MVC</span>
+                        <span class="portfolio-showcase__stack-item">AJAX</span>
+                        <span class="portfolio-showcase__stack-item">Django</span>
+                        <span class="portfolio-showcase__stack-item">React</span>
+                        <span class="portfolio-showcase__stack-item">TypeScript</span>
+                        <span class="portfolio-showcase__stack-item">SQL + MySQL</span>
+                    </div>
                 </div>
                 <div class="hero-copy__actions" data-reveal data-reveal-delay="150">
                     <a class="btn hero-btn hero-btn--dark portfolio-hover-button" href="#portfolio-stack">View Skills</a>
@@ -66,115 +72,6 @@
                 </article>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="row g-4 skills-grid mb-5" id="portfolio-stack">
-    <div class="col-lg-4" data-reveal data-reveal-delay="40">
-        <article class="skills-card h-100 portfolio-hover-card" data-scroll-float data-float-depth="12">
-            <div class="skills-card__header">
-                <span class="skills-card__icon skills-card__icon--backend"><i class="fa-solid fa-server"></i></span>
-                <div class="skills-card__intro">
-                    <span class="skills-card__eyebrow">Part 01</span>
-                    <h2 class="skills-card__title">Backend</h2>
-                </div>
-            </div>
-            <p class="skills-card__text">Backend tools for application logic, APIs, and scalable service development.</p>
-            <div class="skills-list">
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-solid fa-code"></i></span>
-                    <span>ASP.NET</span>
-                </div>
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-brands fa-node-js"></i></span>
-                    <span>Node.js</span>
-                </div>
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-brands fa-python"></i></span>
-                    <span>Django</span>
-                </div>
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-solid fa-code-branch"></i></span>
-                    <span>REST API</span>
-                </div>
-            </div>
-        </article>
-    </div>
-    <div class="col-lg-4" data-reveal data-reveal-delay="110">
-        <article class="skills-card h-100 portfolio-hover-card" data-scroll-float data-float-depth="15">
-            <div class="skills-card__header">
-                <span class="skills-card__icon skills-card__icon--frontend"><i class="fa-solid fa-laptop-code"></i></span>
-                <div class="skills-card__intro">
-                    <span class="skills-card__eyebrow">Part 02</span>
-                    <h2 class="skills-card__title">Frontend</h2>
-                </div>
-            </div>
-            <p class="skills-card__text">Frontend tools for responsive interfaces, typed apps, and modern web experiences.</p>
-            <div class="skills-list">
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-brands fa-react"></i></span>
-                    <span>React</span>
-                </div>
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-solid fa-file-code"></i></span>
-                    <span>TypeScript</span>
-                </div>
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-solid fa-forward"></i></span>
-                    <span>Next.js</span>
-                </div>
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-solid fa-wind"></i></span>
-                    <span>Tailwind CSS</span>
-                </div>
-            </div>
-        </article>
-    </div>
-    <div class="col-lg-4" data-reveal data-reveal-delay="180">
-        <article class="skills-card h-100 portfolio-hover-card" data-scroll-float data-float-depth="18">
-            <div class="skills-card__header">
-                <span class="skills-card__icon skills-card__icon--other"><i class="fa-solid fa-toolbox"></i></span>
-                <div class="skills-card__intro">
-                    <span class="skills-card__eyebrow">Part 03</span>
-                    <h2 class="skills-card__title">Other</h2>
-                </div>
-            </div>
-            <p class="skills-card__text">Supporting tools across databases, design workflows, mobile learning, and wider software development.</p>
-            <div class="skills-list skills-list--two-col">
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-solid fa-database"></i></span>
-                    <span>SQL Server</span>
-                </div>
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-solid fa-server"></i></span>
-                    <span>MySQL</span>
-                </div>
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-brands fa-figma"></i></span>
-                    <span>Figma</span>
-                </div>
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-solid fa-image"></i></span>
-                    <span>Photoshop</span>
-                </div>
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-solid fa-mobile-screen-button"></i></span>
-                    <span>Kotlin</span>
-                </div>
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-brands fa-java"></i></span>
-                    <span>Java</span>
-                </div>
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-brands fa-php"></i></span>
-                    <span>PHP</span>
-                </div>
-                <div class="skills-list__item portfolio-hover-list">
-                    <span class="skills-list__icon"><i class="fa-solid fa-robot"></i></span>
-                    <span>AI Tools</span>
-                </div>
-            </div>
-        </article>
     </div>
 </section>
 
@@ -240,10 +137,4 @@
     </div>
 </section>
 {% endblock %}
-
-
-
-
-
-
 
