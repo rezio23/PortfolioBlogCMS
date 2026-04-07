@@ -6,9 +6,13 @@ class SiteConfiguration(models.Model):
     tagline = models.CharField(max_length=255, blank=True)
     about_text = models.TextField(blank=True)
     contact_email = models.EmailField(blank=True)
+    education_telegram_group_url = models.URLField(blank=True)
     facebook_url = models.URLField(blank=True)
     instagram_url = models.URLField(blank=True)
     tiktok_url = models.URLField(blank=True)
+    youtube_url = models.URLField(blank=True)
+    x_url = models.URLField(blank=True)
+    threads_url = models.URLField(blank=True)
     github_url = models.URLField(blank=True)
     updated_at = models.DateTimeField(auto_now=True)
 

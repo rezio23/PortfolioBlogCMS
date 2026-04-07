@@ -92,7 +92,9 @@ a {
     margin-right: 0;
     display: inline-flex;
     align-items: center;
+    align-self: stretch;
     gap: 0.85rem;
+    padding: 0;
     color: var(--brand-dark) !important;
 }
 
@@ -338,7 +340,7 @@ body.portfolio-page .site-navbar {
 .hero-device-wrap {
     position: relative;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     min-height: 36rem;
 }
@@ -874,7 +876,7 @@ label {
 .about-note-card {
     display: flex;
     gap: 1rem;
-    align-items: flex-start;
+    align-items: center;
     padding: 1.2rem 1.25rem;
 }
 
@@ -1123,6 +1125,10 @@ label {
     font-size: 0.82rem;
 }
 
+.portfolio-hover-card{
+    margin-top: 1rem;
+}
+
 .auth-social-btn__status {
     margin-left: auto;
     padding: 0.45rem 0.65rem;
@@ -1133,6 +1139,11 @@ label {
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
+}
+
+.portfolio-showcase__portrait-frame img{
+    width: 100%;
+    border-radius: 20px;
 }
 
 .auth-social-btn--pending .auth-social-btn__status {
@@ -2415,7 +2426,7 @@ body.services-page .site-navbar {
 .contact-social {
     display: flex;
     gap: 0.95rem;
-    align-items: flex-start;
+    align-items: center;
     padding: 1rem 1.05rem;
     border-radius: 1.3rem;
     border: 1px solid rgba(23, 27, 36, 0.08);
@@ -2434,11 +2445,6 @@ body.services-page .site-navbar {
     box-shadow: 0 18px 36px rgba(49, 77, 119, 0.12);
 }
 
-.contact-social--disabled {
-    opacity: 0.8;
-    cursor: default;
-}
-
 .contact-social__icon {
     width: 3.05rem;
     height: 3.05rem;
@@ -2446,6 +2452,7 @@ body.services-page .site-navbar {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    align-self: center;
     flex-shrink: 0;
     color: #ffffff;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 16px 28px rgba(26, 45, 78, 0.12);
@@ -2455,6 +2462,9 @@ body.services-page .site-navbar {
     background: linear-gradient(135deg, #1d4ed8 0%, #38bdf8 100%);
 }
 
+.contact-social--education-telegram .contact-social__icon {
+    background: linear-gradient(135deg, #229ed9 0%, #5cc8ff 100%);
+}
 .contact-social--facebook .contact-social__icon {
     background: linear-gradient(135deg, #1877f2 0%, #4f8ffb 100%);
 }
@@ -2467,6 +2477,18 @@ body.services-page .site-navbar {
     background: linear-gradient(135deg, #111827 0%, #25f4ee 100%);
 }
 
+.contact-social--youtube .contact-social__icon {
+    background: linear-gradient(135deg, #ff0033 0%, #ff4d4d 100%);
+}
+
+.contact-social--x .contact-social__icon {
+    background: linear-gradient(135deg, #050505 0%, #3f3f46 100%);
+}
+
+.contact-social--threads .contact-social__icon {
+    background: linear-gradient(135deg, #111111 0%, #4b5563 100%);
+}
+
 .contact-social--github .contact-social__icon {
     background: linear-gradient(135deg, #111827 0%, #374151 100%);
 }
@@ -2474,7 +2496,8 @@ body.services-page .site-navbar {
 .contact-social__body {
     min-width: 0;
     display: grid;
-    gap: 0.22rem;
+    gap: 0.28rem;
+    align-content: center;
     flex: 1;
 }
 
@@ -2483,6 +2506,7 @@ body.services-page .site-navbar {
     align-items: center;
     justify-content: space-between;
     gap: 0.75rem;
+    flex-wrap: wrap;
 }
 
 .contact-social__label strong {
@@ -2500,14 +2524,30 @@ body.services-page .site-navbar {
 
 .contact-social__meta {
     color: #334155;
+    font-size: 0.94rem;
     font-weight: 700;
     word-break: break-word;
 }
 
-.contact-social__hint {
+.contact-social-empty {
+    display: grid;
+    gap: 0.32rem;
+    margin-top: 1.6rem;
+    padding: 1.05rem 1.1rem;
+    border-radius: 1.3rem;
+    border: 1px dashed rgba(32, 91, 144, 0.18);
+    background: rgba(255, 255, 255, 0.58);
+}
+
+.contact-social-empty strong {
+    color: #101521;
+    font-size: 1rem;
+}
+
+.contact-social-empty span {
     color: #5f687b;
-    font-size: 0.93rem;
-    line-height: 1.65;
+    font-size: 0.95rem;
+    line-height: 1.6;
 }
 
 .contact-form__grid {
@@ -2570,7 +2610,7 @@ body.login-page .site-navbar {
 
 .auth-register__hero {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     gap: 1rem 1.5rem;
 }

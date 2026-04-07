@@ -11,8 +11,8 @@
             <div class="contact-card contact-card--info portfolio-motion-surface" data-reveal data-scroll-float data-float-depth="8">
                 <span class="contact-card__eyebrow">Get in touch</span>
                 <h1 class="contact-card__title">Let&apos;s connect through the channel that fits best.</h1>
-                <p class="contact-card__text">Use the form for direct inquiries, or reach out through Facebook, Instagram, TikTok, email, and GitHub.</p>
-                <p class="contact-card__subcopy">Every channel below can be managed from your Site Configuration, so this page stays easy to update as your brand grows.</p>
+                <p class="contact-card__text">Use the form for direct inquiries, or open any contact method below.</p>
+                <p class="contact-card__subcopy">When you update a saved URL in Site Configuration, the label here refreshes automatically to show a cleaner handle or address.</p>
 
                 <div class="contact-social-grid">
                     {% for channel in contact_channels %}
@@ -25,7 +25,6 @@
                                         <span class="contact-social__action">{{ channel.cta }}</span>
                                     </span>
                                     <span class="contact-social__meta">{{ channel.value }}</span>
-                                    <span class="contact-social__hint">{{ channel.hint }}</span>
                                 </span>
                             </a>
                         {% else %}
@@ -37,7 +36,6 @@
                                         <span class="contact-social__action">{{ channel.cta }}</span>
                                     </span>
                                     <span class="contact-social__meta">{{ channel.value }}</span>
-                                    <span class="contact-social__hint">{{ channel.hint }}</span>
                                 </span>
                             </div>
                         {% endif %}
@@ -52,7 +50,7 @@
                 <h2 class="contact-card__title contact-card__title--compact">Contact Me</h2>
                 <p class="contact-card__text">Use this form to receive inquiries directly into the database.</p>
 
-                <form method="post" class="contact-form" novalidate>
+                <form method="post" class="contact-form">
                     {% csrf_token %}
 
                     {% if form.non_field_errors %}

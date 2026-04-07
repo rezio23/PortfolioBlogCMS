@@ -36,6 +36,14 @@ def env_list(key, default=""):
     return [item.strip() for item in value.split(",") if item.strip()]
 
 
+def env_int(key, default=0):
+    value = env(key, default)
+    try:
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
 SECRET_KEY = env("DJANGO_SECRET_KEY", "unsafe-development-key")
 DEBUG = env_bool("DJANGO_DEBUG", True)
 ALLOWED_HOSTS = env_list("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost")
@@ -133,3 +141,6 @@ SOCIAL_LOGIN_URLS = {
     "facebook": env("SOCIAL_LOGIN_FACEBOOK_URL", ""),
 }
 
+TELEGRAM_BOT_TOKEN = env("TELEGRAM_BOT_TOKEN", "")
+TELEGRAM_CONTACT_CHAT_ID = env("TELEGRAM_CONTACT_CHAT_ID", "")
+TELEGRAM_API_TIMEOUT = env_int("TELEGRAM_API_TIMEOUT", 10)
