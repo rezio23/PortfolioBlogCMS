@@ -244,6 +244,25 @@ html[data-theme="light"] body.portfolio-page .site-action-btn--outline {
     border-color: rgba(23, 27, 36, 0.08);
 }
 
+html[data-theme="light"] body.services-page .about-panel--primary {
+    background: linear-gradient(150deg, rgba(255, 255, 255, 0.94) 0%, rgba(243, 247, 255, 0.92) 100%);
+    border-color: rgba(23, 27, 36, 0.08);
+    color: #171b24;
+    box-shadow: 0 20px 48px rgba(49, 77, 119, 0.12);
+}
+
+html[data-theme="light"] body.services-page .about-panel--primary .about-panel__label {
+    color: #6b7a92;
+}
+
+html[data-theme="light"] body.services-page .about-panel--primary .about-panel__title {
+    color: #101521;
+}
+
+html[data-theme="light"] body.services-page .about-panel--primary p {
+    color: #5b6578;
+}
+
 html[data-theme="dark"] body {
     background: radial-gradient(circle at top, #242a3d 0%, #181d2c 34%, #111521 100%);
     color: #e7ecff;
